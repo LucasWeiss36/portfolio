@@ -6,32 +6,21 @@
   scroll-behavior: smooth;
 }
 
+body {
+  overflow-x: hidden;
+}
 $primary_color: rgba(61, 207, 182, 1);
 $primary_color_50: rgba(61, 207, 182, 0.5);
 $primary_color_30: rgba(61, 207, 182, 0.03);
 $primary_color_10: rgba(61, 207, 182, 0.1);
 $white: rgba(255, 255, 255, 1);
 
-@mixin dFlex($jc: center, $ai: center, $g: 0){
-	display: flex;
-	justify-content: $jc;
-	align-items: $ai;
-	gap: $g;
+@mixin dFlex($jc: center, $ai: center, $g: 0) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+  gap: $g;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* fira-code-300 - latin */
 @font-face {
