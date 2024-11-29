@@ -1,0 +1,57 @@
+@import "./../../styles.scss";
+
+section {
+  background-color: $background_color;
+  padding: 140px 95px 144px 112px;
+  @include dFlex($jc: unset, $ai: unset, $g: 96px);
+  font-family: "Karla";
+  font-size: 18px;
+  > img {
+    width: 568px;
+    height: 568px;
+  }
+  > div {
+    padding: 100px 0 0 0;
+    @include dFlex($jc: unset, $ai: flex-start, $g: 20px);
+    flex-direction: column;
+    > h4 {
+      color: $primary_color;
+      font-size: 24px;
+    }
+    > div {
+      > h1 {
+        color: $primary_color;
+        font-family: "Fira Code";
+        font-weight: 900;
+        font-size: 64px;
+      }
+      background-image: url(./../../assets/img/am-skills-bg.png);
+      background-repeat: no-repeat;
+      background-position: left;
+      background-size: cover;
+      padding: 32px;
+      border: 1px solid $primary_color;
+      border-radius: 30px;
+      color: white;
+      @include dFlex($jc: center, $ai: flex-start, $g: 40px);
+      flex-direction: column;
+      > div {
+        @include dFlex($g: 32px);
+        flex-direction: column;
+
+        > div {
+			
+			@include dFlex($ai:flex-start,$g: 16px);
+			flex-direction: column;
+			.img-text {
+				> img {
+              width: 32px;
+              height: 32px;
+            }
+            @include dFlex($ai: flex-start, $g: 24px);
+          }
+        }
+      }
+    }
+  }
+}
