@@ -1,12 +1,12 @@
 <header>
   <div>
     <div class="toggle-switch">
-      <div class="toggle-option" [class.active]="currentLanguage === 'EN'" (click)="switchLanguage('EN')">EN</div>
-      <div class="toggle-option" [class.active]="currentLanguage === 'DE'" (click)="switchLanguage('DE')">DE</div>
+      <div class="toggle-option" [class.active]="this.portfolioService.getLanguageFromSessionStorage() === 'en'" (click)="switchLanguage('en')">EN</div>
+      <div class="toggle-option" [class.active]="this.portfolioService.getLanguageFromSessionStorage() === 'de'" (click)="switchLanguage('de')">DE</div>
     </div>
-    <a>About Me</a>
-    <a>Skills</a>
-    <a>Projects</a>
+    <a>{{'nav.aboutMe' | translate}}</a>
+    <a>{{'nav.skills' | translate}}</a>
+    <a>{{'nav.projects' | translate}}</a>
   </div>
   <div class="logo">
     <svg

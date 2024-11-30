@@ -1,0 +1,18 @@
+<section>
+  <img src="./../../assets/img/aboutMeExample.svg" alt="" />
+  <div>
+    <h4>{{'aboutMe.headline' | translate}}</h4>
+    <div>
+      <h1>{{'aboutMe.subline' | translate}}</h1>
+      <div>
+        <span>{{'aboutMe.greeting' | translate}}</span>
+        <div>
+          <div *ngFor="let src of imgSrc;let i = index " class="img-text">
+            <img [src]="src" alt="" />
+            <span>{{jsonSrc[i] | translate}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

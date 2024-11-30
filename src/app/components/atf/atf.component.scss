@@ -1,5 +1,4 @@
-@import "./../../styles.scss";
-
+@import "./../../../styles.scss";
 section {
   background-image: url("/../../assets/img/atf-bg.png");
   background-repeat: no-repeat;
@@ -95,8 +94,7 @@ section {
     z-index: 10;
     position: absolute;
     bottom: 45px;
-    left: 0;
-    right: 0;
+    right: 1px;
     padding: 12px 0;
     background-color: rgba(255, 255, 255, 0.12);
     overflow: hidden;

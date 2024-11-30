@@ -1,0 +1,101 @@
+{
+	"nav": {
+	  "aboutMe": "Über mich",
+	  "skills": "Fähigkeiten",
+	  "projects": "Projekte"
+	},
+	"atf": {
+	  "buttons": {
+		"myWork": "Meine Arbeit ansehen",
+		"contact": "Kontaktiere mich"
+	  },
+	  "marquee": {
+		"remote": "Verfügbar für Remote-Arbeit",
+		"dev": "Frontend-Entwickler",
+		"location": "Ansässig in Bad Friedrichshall",
+		"interests": "Interessiert an neuen Technologien"
+	  }
+	},
+	"aboutMe": {
+	  "headline": "Wer ich bin",
+	  "subline": "Über mich",
+	  "greeting": "Hallo, ich bin ein deutschsprachiger Frontend-Entwickler mit Sitz in Bad Friedrichshall. Angetrieben von den unbegrenzten Möglichkeiten in der IT freue ich mich darauf, visuell ansprechende und intuitive Websites sowie Anwendungen zu gestalten.",
+	  "description": {
+		"first": "Ich bin flexibel, was Arbeitsumgebungen betrifft, und kann sowohl vor Ort als auch remote effektiv arbeiten.",
+		"second": "Ich bin aufgeschlossen und immer auf der Suche nach persönlichen Herausforderungen, um mein Wissen und meine Fähigkeiten kontinuierlich zu verbessern.",
+		"third": "In meinem Beruf geht es beim Programmieren nicht nur darum, Code zu schreiben; es ist eine kreative Form der Problemlösung. Ich bin stolz darauf, komplexe technische Herausforderungen in einfache, benutzerfreundliche Lösungen umzuwandeln. So helfe ich Ihnen, Ihre Ziele zu erreichen und Ihre Visionen zu verwirklichen."
+	  }
+	},
+	"mySkills": {
+	  "headline": "Technologien",
+	  "subline": "Fähigkeiten",
+	  "description": "Meine Reise hat mich durch verschiedene Projekte geführt, bei denen ich eine Vielzahl von Frontend-Technologien und -Konzepten eingesetzt habe. Ich bin offen für neue Technologien und Methoden, um meine Fähigkeiten kontinuierlich zu erweitern und in der sich ständig weiterentwickelnden Webentwicklungslandschaft auf dem neuesten Stand zu bleiben.",
+	  "ctaHeadline": "Brauchen Sie eine andere Fähigkeit?",
+	  "ctaDescription": "Kontaktieren Sie mich gerne. Ich freue mich darauf, mein Wissen zu erweitern.",
+	  "ctaButton": "Lass uns reden"
+	},
+	"portfolio": {
+	  "headline": "Portfolio",
+	  "subline": "Ausgewählte Projekte",
+	  "description": "Entdecken Sie hier eine Auswahl meiner Arbeiten - Interagieren Sie mit Projekten, um meine Fähigkeiten in Aktion zu sehen."
+	},
+	"testimonials": {
+	  "headline": "Was meine Kollegen über mich sagen",
+	  "entries": [
+		{
+		  "quote": "Lukas hat sich als zuverlässiger Gruppenpartner erwiesen. Seine technischen Fähigkeiten und sein proaktiver Ansatz waren entscheidend für den Erfolg unseres Projekts.",
+		  "author": "H. Janisch",
+		  "role": "Team-Partner"
+		},
+		{
+		  "quote": "Ich hatte das Glück, mit Lukas an einem Projekt bei der Developer Akademie zu arbeiten. Sein Einsatz, seine Ruhe und sein Engagement stellten sicher, dass unser Team erfolgreich war. Er ist sachkundig, angenehm im Umgang und ich würde jederzeit wieder mit ihm arbeiten.",
+		  "author": "Anonym",
+		  "role": "Kollege"
+		},
+		{
+		  "quote": "Ich habe so viel von Lukas' effizienter Arbeitsweise gelernt. Er ist äußerst kompetent und unterstützend.",
+		  "author": "T. Schulz",
+		  "role": "Frontend-Entwickler"
+		}
+	  ]
+	},
+	"contactForm": {
+	  "headline": "Kontaktieren Sie mich",
+	  "subline": "Lassen Sie uns zusammenarbeiten",
+	  "problemToSolve": {
+		"headline": "Haben Sie ein Problem zu lösen?",
+		"description": "Kontaktieren Sie mich über dieses Formular. Ich bin gespannt auf Ihre Ideen und möchte durch meine Arbeit zu Ihren Projekten beitragen.",
+		"cta": {
+		  "text": "Brauchen Sie einen Frontend-Entwickler?",
+		  "highlightedText": "Lass uns reden!"
+		}
+	  },
+	  "fields": [
+		{
+		  "label": "Wie heißen Sie?",
+		  "placeholder": "Ihr Name kommt hier hin",
+		  "errorText": "Ups! Es scheint, als ob Ihr Name fehlt."
+		},
+		{
+		  "label": "Wie lautet Ihre E-Mail-Adresse?",
+		  "errorText": "Hoppla! Ihre E-Mail-Adresse wird benötigt."
+		},
+		{
+		  "label": "Wie kann ich Ihnen helfen?",
+		  "placeholder": "Hallo Lukas, ich interessiere mich für...",
+		  "errorText": "Was benötigen Sie zur Entwicklung?"
+		}
+	  ],
+	  "privacyPolicy": {
+		"text": "Ich habe die Datenschutzerklärung gelesen und stimme der Verarbeitung meiner Daten zu.",
+		"linkText": "Datenschutzerklärung"
+	  },
+	  "button": "Sag Hallo :)"
+	},
+	"footerInfo": {
+	  "role": "Webentwickler",
+	  "location": "München, Deutschland",
+	  "legalNotice": "Impressum"
+	}
+  }
+  

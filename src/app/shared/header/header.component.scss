@@ -1,13 +1,13 @@
 @import "./../../../styles.scss";
 header {
-	color: $white;
+  color: $white;
   @include dFlex($jc: space-between);
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   padding: 25px 96px 0;
-  background: linear-gradient(0deg, rgba(0,0,0,0), rgba(0, 0, 0, 0.75));
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75));
   > div {
     @include dFlex($g: 24px);
     font-family: "Fira Code";

@@ -1,4 +1,4 @@
-@import "./../../styles.scss";
+@import "./../../../styles.scss";
 
 section {
   background-color: $background_color;
@@ -25,7 +25,7 @@ section {
         font-weight: 900;
         font-size: 64px;
       }
-      background-image: url(./../../assets/img/am-skills-bg.png);
+      background-image: url(./../../../assets/img/am-skills-bg.png);
       background-repeat: no-repeat;
       background-position: left;
       background-size: cover;
@@ -40,11 +40,10 @@ section {
         flex-direction: column;
 
         > div {
-			
-			@include dFlex($ai:flex-start,$g: 16px);
-			flex-direction: column;
-			.img-text {
-				> img {
+          @include dFlex($ai: flex-start, $g: 16px);
+          flex-direction: column;
+          .img-text {
+            > img {
               width: 32px;
               height: 32px;
             }

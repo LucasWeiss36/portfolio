@@ -1,0 +1,44 @@
+<section>
+  <div class="banner">
+    <div *ngFor="let i of [0, 1, 2]">
+      <span>•</span>
+      <span>{{'atf.marquee.remote' | translate}}</span>
+      <span>•</span>
+      <span>{{'atf.marquee.dev' | translate}}</span>
+      <span>•</span>
+      <span>{{'atf.marquee.location' | translate}}</span>
+      <span>•</span>
+      <span>{{'atf.marquee.interests' | translate}}</span>
+    </div>
+  </div>
+  <main>
+    <div class="headline">
+      <h5>{{'atf.marquee.dev' | translate}}</h5>
+      <h1>Lucas Weiß</h1>
+    </div>
+    <div class="btns">
+      <button>{{'atf.buttons.myWork' | translate}}</button>
+      <button>{{'atf.buttons.contact' | translate}}</button>
+    </div>
+  </main>
+  <div class="info-left-right">
+    <div class="info-left">
+      <a href="">
+        <img src="./../../assets/icons/arrow-down.svg" alt="" />
+      </a>
+      <div></div>
+    </div>
+    <div class="info-right">
+      <a href="mailto:email@email.de">email&#64;email.de</a>
+      <div class="icons-right">
+        <a href="">
+          <img src="./../../assets/icons/Github.svg" alt="" />
+        </a>
+        <a href="">
+          <img src="./../../assets/icons/Linkedin.svg" alt="" />
+        </a>
+        <div></div>
+      </div>
+    </div>
+  </div>
+</section>
