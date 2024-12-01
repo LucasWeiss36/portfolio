@@ -1,7 +1,6 @@
 @import "./../../../styles.scss";
 
 section {
-  background-color: $background_color;
   padding: 140px 95px 144px 112px;
   @include dFlex($jc: unset, $ai: unset, $g: 96px);
   font-family: "Karla";

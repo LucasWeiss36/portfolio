@@ -1,1 +1,140 @@
 @import "./../../../styles.scss";
+
+section {
+  background-color: $primary_color;
+  background-image: url(./../../../assets/img/am-skills-bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Karla";
+  font-size: 18px;
+  color: $white;
+  padding: 144px 96px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  > h4 {
+    font-size: 24px;
+    color: $primary_color;
+  }
+  > div {
+    @include dFlex($jc: space-between, $ai: flex-start, $g: 96px);
+    > .skillSet {
+      background-color: $primary_color_10;
+      border: 1px solid $primary_color;
+      border-radius: 30px;
+      max-width: 520px;
+      padding: 32px;
+
+      > h1 {
+        color: $primary_color;
+        font-family: "Fira Code";
+        font-weight: 900;
+        font-size: 64px;
+        margin: 0 0 40px 0;
+      }
+      > div {
+        @include dFlex($g: 24px);
+        flex-direction: column;
+        margin: 0 0 40px 0;
+        > div {
+          @include dFlex($ai: flex-start, $g: 16px);
+          flex-direction: column;
+
+          > h2 {
+            font-size: 24px;
+            font-family: "Fira Code";
+          }
+        }
+      }
+      > button {
+        border: 1px solid $white;
+        background-color: transparent;
+        border-radius: 50px;
+        padding: 13px 24px;
+        color: $white;
+        cursor: pointer;
+        transition: 200ms ease-in-out;
+        overflow: hidden;
+        
+      }
+    }
+    > .technologies {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      grid-column-gap: 72px;
+      grid-row-gap: 40px;
+      > div {
+        @include dFlex($jc: flex-start, $g: 8px);
+        flex-direction: column;
+        > img {
+          width: 60px;
+          height: 60px;
+        }
+        > span {
+          font-size: 18px;
+          font-family: "Fira Code";
+          text-align: center;
+        }
+        &:hover {
+          transform: scale(1.2);
+          transition: transform 175ms ease-in-out;
+        }
+      }
+    }
+  }
+}
+
+.highlighed {
+  color: $primary_color;
+}
+
+#tech-10 {
+  &:hover {
+    .popup {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+}
+
+.popup {
+  position: absolute;
+  transform: translate(30%, -95%);
+  background-color: $white;
+  color: black;
+  width: 190px;
+  border-radius: 16px;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity 175ms ease-in-out;
+  pointer-events: none;
+  box-shadow: 0px 0px 10px 0px;
+  > div {
+    @include dFlex($ai: flex-end, $g: 16px);
+    > div {
+      @include dFlex($g: 5px);
+      flex-direction: column;
+      > img {
+        width: 32px;
+      }
+      > span {
+        font-size: 12px;
+        font-weight: 900;
+        font-family: "Karla";
+      }
+    }
+  }
+  > .triangle {
+    position: absolute;
+    bottom: -14px;
+    left: 29px;
+  }
+}

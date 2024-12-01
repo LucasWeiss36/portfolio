@@ -1,4 +1,42 @@
 <section>
-	<div></div>
-	<div></div>
+  <h4>{{ "mySkills.headline" | translate }}</h4>
+  <div>
+    <div class="skillSet">
+      <h1>{{ "mySkills.subline" | translate }}</h1>
+      <div>
+        <span>{{ "mySkills.description" | translate }}</span>
+        <div>
+          <h2>
+            {{ "mySkills.ctaHeadline.normal" | translate }}
+            <span class="highlighed">{{
+              "mySkills.ctaHeadline.highlighed" | translate
+            }}</span>
+          </h2>
+          <span>{{ "mySkills.ctaDescription" | translate }}</span>
+        </div>
+      </div>
+      <button>{{ "mySkills.ctaButton" | translate }}</button>
+    </div>
+    <div class="technologies">
+      <div
+        *ngFor="let tech of technologies; let i = index"
+        (mouseenter)="showTooltip(i)"
+        (mouseleave)="hideTooltip()"
+        id="tech-{{ i }}"
+      >
+        <img [src]="tech.imgSrc" alt="{{ tech.name }}" />
+        <span>{{ tech.name }}</span>
+        <div *ngIf="i == 10" class="popup">
+          <span>{{"mySkills.popup" | translate}}</span>
+          <div>
+            <div *ngFor="let interest of interests">
+              <img [src]="interest.imgSrc" alt="" />
+              <span>{{ interest.name }}</span>
+            </div>
+          </div>
+          <img class="triangle" src="assets/img/triangle.svg" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
