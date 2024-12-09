@@ -1,1 +1,47 @@
 @import "./../../../styles.scss";
+
+section {
+  @include dFlex($ai: flex-start, $g: 20);
+  padding: 0 0 8px 96px;
+  flex-direction: column;
+  margin: 0 0 6px 0;
+  > h4 {
+    font-family: "Karla";
+  }
+  > div {
+    @include dFlex($ai: flex-start, $g: 42px);
+    flex-direction: column;
+    > span {
+      font-family: "Karla";
+      width: 450px;
+      text-wrap: wrap;
+    }
+    .project {
+      > .seperator {
+        width: 880px;
+        height: 2px;
+        background-color: $primary_color;
+      }
+      > div {
+        &:not(.seperator) {
+          padding: 40px 32px;
+        }
+
+        @include dFlex($jc: space-between);
+        > h4 {
+          font-family: "Fira Code";
+          color: $white;
+        }
+        > .technologies {
+          font-family: "Karla";
+          @include dFlex($g: 5px);
+          font-size: 18px;
+          > .a {
+            color: $primary_color;
+            font-weight: 900;
+          }
+        }
+      }
+    }
+  }
+}

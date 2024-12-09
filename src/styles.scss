@@ -1,11 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 
-* {
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
-}
-
 $primary_color: rgba(61, 207, 182, 1);
 $primary_color_50: rgba(61, 207, 182, 0.5);
 $primary_color_30: rgba(61, 207, 182, 0.3);
@@ -20,8 +14,27 @@ $background_color: rgba(28, 28, 28, 1);
   gap: $g;
 }
 
-body{
-	background-color: $background_color;
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  color: $white;
+}
+
+body {
+  background-color: $background_color;
+}
+
+h1 {
+  color: $primary_color;
+  font-family: "Fira Code";
+  font-weight: 900;
+  font-size: 64px;
+}
+
+h4 {
+  font-size: 24px;
+  color: $primary_color;
 }
 
 /* fira-code-300 - latin */

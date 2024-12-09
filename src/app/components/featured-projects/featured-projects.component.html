@@ -1,1 +1,27 @@
-<p>featured-projects works!</p>
+<section>
+  <h4>{{ "portfolio.headline" | translate }}</h4>
+  <div>
+    <h1>{{ "portfolio.subline" | translate }}</h1>
+    <span>{{ "portfolio.description" | translate }}</span>
+    <div>
+      <div class="project" *ngFor="let project of projects; let i = index">
+        <div class="seperator" *ngIf="i == 0"></div>
+        <div>
+          <h4>{{ project.name }}</h4>
+          <div class="technologies">
+            <ng-container
+              *ngFor="let technology of project.technologies; let i = index"
+            >
+              <span>{{ technology }}</span>
+              <span class="a" *ngIf="i < project.technologies.length - 1"
+                >|</span
+              >
+            </ng-container>
+          </div>
+        </div>
+
+        <div class="seperator"></div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -8,16 +8,11 @@ section {
   background-size: cover;
   font-family: "Karla";
   font-size: 18px;
-  color: $white;
   padding: 144px 96px;
   display: flex;
   flex-direction: column;
   gap: 20px;
-
-  > h4 {
-    font-size: 24px;
-    color: $primary_color;
-  }
+  
   > div {
     @include dFlex($jc: space-between, $ai: flex-start, $g: 96px);
     > .skillSet {
@@ -26,18 +21,11 @@ section {
       border-radius: 30px;
       max-width: 520px;
       padding: 32px;
-
-      > h1 {
-        color: $primary_color;
-        font-family: "Fira Code";
-        font-weight: 900;
-        font-size: 64px;
-        margin: 0 0 40px 0;
-      }
+      @include dFlex($ai:flex-start,$g: 40px);
+	  flex-direction: column;
       > div {
         @include dFlex($g: 24px);
         flex-direction: column;
-        margin: 0 0 40px 0;
         > div {
           @include dFlex($ai: flex-start, $g: 16px);
           flex-direction: column;
@@ -53,7 +41,6 @@ section {
         background-color: transparent;
         border-radius: 50px;
         padding: 13px 24px;
-        color: $white;
         cursor: pointer;
         transition: 200ms ease-in-out;
         overflow: hidden;
@@ -117,6 +104,9 @@ section {
   transition: opacity 175ms ease-in-out;
   pointer-events: none;
   box-shadow: 0px 0px 10px 0px;
+  >span{
+	color: black;
+  }
   > div {
     @include dFlex($ai: flex-end, $g: 16px);
     > div {
@@ -129,6 +119,7 @@ section {
         font-size: 12px;
         font-weight: 900;
         font-family: "Karla";
+		color: black;
       }
     }
   }

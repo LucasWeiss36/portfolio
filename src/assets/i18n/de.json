@@ -45,23 +45,23 @@
   },
   "testimonials": {
     "headline": "Was meine Kollegen über mich sagen",
-    "entries": [
-      {
+    "entries": {
+      "first": {
         "quote": "Lukas hat sich als zuverlässiger Gruppenpartner erwiesen. Seine technischen Fähigkeiten und sein proaktiver Ansatz waren entscheidend für den Erfolg unseres Projekts.",
         "author": "H. Janisch",
         "role": "Team-Partner"
       },
-      {
+      "second": {
         "quote": "Ich hatte das Glück, mit Lukas an einem Projekt bei der Developer Akademie zu arbeiten. Sein Einsatz, seine Ruhe und sein Engagement stellten sicher, dass unser Team erfolgreich war. Er ist sachkundig, angenehm im Umgang und ich würde jederzeit wieder mit ihm arbeiten.",
         "author": "Anonym",
         "role": "Kollege"
       },
-      {
+      "third": {
         "quote": "Ich habe so viel von Lukas' effizienter Arbeitsweise gelernt. Er ist äußerst kompetent und unterstützend.",
         "author": "T. Schulz",
         "role": "Frontend-Entwickler"
       }
-    ]
+    }
   },
   "contactForm": {
     "headline": "Kontaktieren Sie mich",
@@ -74,22 +74,22 @@
         "highlightedText": "Lass uns reden!"
       }
     },
-    "fields": [
-      {
+    "fields": {
+      "first": {
         "label": "Wie heißen Sie?",
         "placeholder": "Ihr Name kommt hier hin",
         "errorText": "Ups! Es scheint, als ob Ihr Name fehlt."
       },
-      {
+      "second": {
         "label": "Wie lautet Ihre E-Mail-Adresse?",
         "errorText": "Hoppla! Ihre E-Mail-Adresse wird benötigt."
       },
-      {
+      "third": {
         "label": "Wie kann ich Ihnen helfen?",
         "placeholder": "Hallo Lukas, ich interessiere mich für...",
         "errorText": "Was benötigen Sie zur Entwicklung?"
       }
-    ],
+    },
     "privacyPolicy": {
       "text": "Ich habe die Datenschutzerklärung gelesen und stimme der Verarbeitung meiner Daten zu.",
       "linkText": "Datenschutzerklärung"

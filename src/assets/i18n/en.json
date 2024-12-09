@@ -46,23 +46,23 @@
 
   "testimonials": {
     "headline": "What my colleagues say about me",
-    "entries": [
-      {
+    "entries": {
+      "first": {
         "quote": "Lukas has proven to be a reliable group partner. His technical skills and proactive approach were crucial to the success of our project.",
         "author": "H. Janisch",
         "role": "Team Partner"
       },
-      {
+      "second": {
         "quote": "I had the good fortune of working with Lukas on a project at the Developer Akademie. His effort, calmness, and dedication ensured our team was set up for success. He is knowledgeable, easy to work with, and I would work with him again given the chance.",
         "author": "Anonymous",
         "role": "Colleague"
       },
-      {
+      "third": {
         "quote": "I learned so much from Lukas' efficient way of working. He is highly skilled and supportive.",
         "author": "T. Schulz",
         "role": "Frontend Developer"
       }
-    ]
+    }
   },
   "contactForm": {
     "headline": "Contact me",
@@ -75,22 +75,22 @@
         "highlightedText": "Let's talk!"
       }
     },
-    "fields": [
-      {
+    "fields": {
+      "first": {
         "label": "What's your name?",
         "placeholder": "Your name goes here",
-        "errorText": "Oops! it seems your name is missing "
+        "errorText": "Oops! it seems your name is missing"
       },
-      {
+      "second": {
         "label": "What's your email?",
-        "errorText": "Hoppla! your email is required"
+        "errorText": "Oops! your email is required"
       },
-      {
+      "third": {
         "label": "How can I help you?",
         "placeholder": "Hello Lukas, I am interested in...",
         "errorText": "What do you need to develop?"
       }
-    ],
+    },
     "privacyPolicy": {
       "text": "I've read the privacy policy and agree to the processing of my data as outlined.",
       "linkText": "privacy policy"

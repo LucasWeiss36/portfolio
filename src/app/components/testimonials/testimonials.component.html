@@ -1,1 +1,44 @@
-<p>testimonials works!</p>
+<section>
+  <h4>{{ "testimonials.headline" | translate }}</h4>
+  <div class="testimonial-wrapper">
+	<div
+	  class="testimonial"
+	  *ngFor="let key of displayedKeys; let i = index"
+	  [class.active]="i === currentIndex + 1"
+	  [style.transform]="'translateX(-' + currentIndex * 100 + '%)'"
+	>
+	  <span>{{ "testimonials.entries." + key + ".quote" | translate }}</span>
+	  <div>
+		<div class="line"></div>
+		<div>
+		  <span>{{ "testimonials.entries." + key + ".author" | translate }}</span>
+		  <span> - </span>
+		  <span>{{ "testimonials.entries." + key + ".role" | translate }}</span>
+		</div>
+	  </div>
+	</div>
+  </div>
+  <div class="navigation">
+	<img
+	  src="./../../../assets/icons/arrow.svg"
+	  alt="arrow"
+	  (click)="prevSlide()"
+	/>
+	<div class="dots">
+	  <span
+		*ngFor="let key of testimonialsKeys; let i = index"
+		[class.active]="i === currentIndex"
+		(click)="goToSlide(i)"
+		>•</span
+	  >
+	</div>
+	<img
+	  style="rotate: 180deg"
+	  src="./../../../assets/icons/arrow.svg"
+	  alt="arrow"
+	  (click)="nextSlide()"
+	/>
+  </div>
+  
+  
+</section>
