@@ -13,9 +13,57 @@ export class FeaturedProjectsComponent {
   projects = [
     {
       name: 'Join',
-      technologies: ['Angular', 'TypeScript', 'HTML', 'CSS', 'Firebase'],
+      technologies: [
+        { name: 'HTML', imgSrc: 'assets/icons/colored/HTML.svg' },
+        { name: 'CSS', imgSrc: 'assets/icons/colored/CSS.svg' },
+        { name: 'JavaScript', imgSrc: 'assets/icons/colored/javaScript.svg' },
+        { name: 'Firebase', imgSrc: 'assets/icons/colored/firebase.svg' },
+      ],
+      image: 'join.png',
     },
-    { name: 'El Pollo Loco', technologies: ['HTML', 'CSS', 'JavaScript'] },
-    { name: 'DA Bubble', technologies: ['Angular', 'Firebase', 'TypeScript'] },
+    {
+      name: 'El Pollo Loco',
+      technologies: [
+        { name: 'HTML', imgSrc: 'assets/icons/colored/HTML.svg' },
+        { name: 'CSS', imgSrc: 'assets/icons/colored/CSS.svg' },
+        { name: 'JavaScript', imgSrc: 'assets/icons/colored/javaScript.svg' },
+      ],
+      image: 'el_pollo_loco.png',
+    },
+    {
+      name: 'DABubble',
+      technologies: [
+        { name: 'Angular', imgSrc: 'assets/icons/colored/angular.svg' },
+        { name: 'Firebase', imgSrc: 'assets/icons/colored/firebase.svg' },
+        { name: 'TypeScript', imgSrc: 'assets/icons/colored/typeScript.svg' },
+      ],
+      image: 'DA_bubble.png',
+    },
   ];
+
+  clickedIndex: number | null = null;
+  hoveredIndex: number | null = null;
+
+  showHoveredProject(index: number) {
+    this.hoveredIndex = index;
+  }
+
+  hideHoveredProject() {
+    this.hoveredIndex = null;
+  }
+  showClickedProject(index: number): void {
+    this.clickedIndex = index;
+    document.body.style.overflow = 'hidden';
+  }
+
+  hideClickedProject(): void {
+    this.clickedIndex = null;
+    document.body.style.overflow = 'unset';
+  }
+
+  nextProject() {
+    if (this.clickedIndex != null) {
+      this.clickedIndex++;
+    }
+  }
 }

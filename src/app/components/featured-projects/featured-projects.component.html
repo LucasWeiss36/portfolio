@@ -6,14 +6,20 @@
     <div>
       <div class="project" *ngFor="let project of projects; let i = index">
         <div class="seperator" *ngIf="i == 0"></div>
-        <div>
+        <div
+          (click)="showClickedProject(i)"
+          (mouseenter)="showHoveredProject(i)"
+          (mouseleave)="hideHoveredProject()"
+        >
           <h4>{{ project.name }}</h4>
           <div class="technologies">
             <ng-container
               *ngFor="let technology of project.technologies; let i = index"
             >
-              <span>{{ technology }}</span>
-              <span class="a" *ngIf="i < project.technologies.length - 1"
+              <span>{{ technology.name }}</span>
+              <span
+                class="text-sperator"
+                *ngIf="i < project.technologies.length - 1"
                 >|</span
               >
             </ng-container>
@@ -21,7 +27,86 @@
         </div>
 
         <div class="seperator"></div>
+        <div
+          class="popup"
+          *ngIf="i == hoveredIndex"
+          [ngClass]="{ 'shift-down': hoveredIndex !== 0 }"
+        >
+          <img
+            [src]="'./../../../assets/img/' + projects[i].image"
+            [alt]="projects[i].name + ' Image'"
+          />
+        </div>
       </div>
+      <ng-container *ngFor="let project of projects; let i = index">
+        <div *ngIf="i == clickedIndex" class="backdrop" (click)="hideClickedProject()">
+          <div class="projectInfo" (click)="$event.stopPropagation()">
+            <div class="leftSide">
+              <div class="numberName">
+                <h1>0{{ i + 1 }}</h1>
+                <h4>{{ project.name }}</h4>
+              </div>
+              <div>
+                <span class="about">{{
+                  "portfolio.projects.about" | translate
+                }}</span>
+                <span class="description">{{
+                  "portfolio.projects.join.description" | translate
+                }}</span>
+                <div class="technology_container">
+                  <div
+                    class="technologies_small"
+                    *ngFor="let technology of project.technologies"
+                  >
+                    <img
+                      class="technology"
+                      src="{{ technology.imgSrc }}"
+                      alt=""
+                    />
+                    <span>{{ technology.name }}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="buttons">
+                <a class="button">
+                  Github
+                  <img
+                    src="./../../../assets/icons/colored/arrow_outward.svg"
+                    alt=""
+                  />
+                </a>
+                <a class="button">
+                  Live Test
+                  <img
+                    src="./../../../assets/icons/colored/arrow_outward.svg"
+                    alt=""
+                  />
+                </a>
+              </div>
+            </div>
+            <div class="rightSide">
+              <img
+                (click)="hideClickedProject()"
+                src="./../../../assets/icons/close_small.svg"
+                alt=""
+              />
+              <img
+                class="preview"
+                [src]="'./../../../assets/img/' + projects[i].image"
+                [alt]="projects[i].name + ' Image'"
+              />
+			  <span *ngIf="clickedIndex == 2" class="button soon">Coming Soon</span>
+              <div class="nextProject" *ngIf="clickedIndex != 2" (click)="nextProject()">
+                <span>Next Project</span>
+                <img
+                  src="./../../../assets/icons/colored/arrow_forward.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
     </div>
   </div>
 </section>

@@ -17,6 +17,8 @@ section {
       text-wrap: wrap;
     }
     .project {
+      cursor: pointer;
+
       > .seperator {
         width: 880px;
         height: 2px;
@@ -36,11 +38,169 @@ section {
           font-family: "Karla";
           @include dFlex($g: 5px);
           font-size: 18px;
-          > .a {
+          > .text-sperator {
             color: $primary_color;
             font-weight: 900;
           }
         }
+      }
+    }
+  }
+}
+
+.popup {
+  position: absolute;
+  transform: translate(250%, -55%);
+  transition: opacity 175ms ease-in-out;
+  opacity: 0;
+  > img {
+    height: 200px;
+    width: 300px;
+    border-radius: 12px;
+    transition: opacity 175ms ease-in-out;
+  }
+  &.shift-down {
+    transform: translate(250%, -55%);
+  }
+  &::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    bottom: 25px;
+    right: 15px;
+    border-radius: 12px;
+    height: 200px;
+    width: 300px;
+    background-image: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 10px,
+      $primary_color 10px,
+      $primary_color 12px
+    );
+  }
+}
+.project {
+  &:hover {
+    .popup {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+}
+.soon{
+	border: 1px solid red;
+	color: red;
+	&:hover{
+		border: 1px solid $white;
+		color: $white;
+	}
+}
+
+.backdrop {
+  @include dFlex();
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.75);
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  padding: 0 !important;
+  h1,
+  span {
+    font-family: "Karla";
+  }
+  > .projectInfo {
+    @include dFlex();
+    padding: 0 90px;
+    max-width: 1248px;
+    height: 656px;
+    background-color: $background_color;
+    background-image: linear-gradient(
+      210deg,
+      #08463b,
+      #08463b,
+      $background_color,
+      $background_color,
+      $background_color
+    );
+    border-radius: 30px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    > .leftSide {
+      @include dFlex($ai: flex-start, $g: 40px);
+      flex-direction: column;
+      .numberName {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        > h1 {
+          font-size: 128px;
+          font-weight: bold;
+        }
+        > h4 {
+          font-family: "Fira Code";
+          font-weight: bold;
+          font-size: 64px;
+          color: $white;
+        }
+      }
+      .about {
+        color: $primary_color;
+        font-family: "Fira Code";
+        font-size: 24px;
+        font-weight: bold;
+      }
+      .description {
+        display: block;
+        width: 480px;
+      }
+      > div {
+        @include dFlex($ai: flex-start, $g: 24px);
+        flex-direction: column;
+        > .technology_container {
+          //   flex-direction: row;
+          @include dFlex($jc: flex-start, $g: 16px);
+
+          .technologies_small {
+            @include dFlex($g: 4px);
+            .technology {
+              width: 24px;
+              height: 24px;
+            }
+          }
+        }
+      }
+      .buttons {
+        @include dFlex($g: 32px);
+        flex-direction: row;
+        > a {
+          font-family: "Fira Code";
+          font-size: 18px;
+          > img {
+            height: 15px;
+            width: 15px;
+          }
+        }
+      }
+    }
+    > .rightSide {
+      @include dFlex($ai: flex-end);
+      flex-direction: column;
+      > div {
+        @include dFlex($g: 16px);
+        span {
+          color: $primary_color;
+        }
+      }
+      > .preview {
+        width: 520px;
+        height: 370px;
+        border-radius: 30px;
+        margin: 39px 0 48px 0;
+
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
       }
     }
   }

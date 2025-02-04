@@ -1,1 +1,104 @@
-<p>contact works!</p>
+<section>
+  <div class="left">
+    <div class="head">
+      <h4>{{ "contactForm.headline" | translate }}</h4>
+      <h1>{{ "contactForm.subline" | translate }}</h1>
+    </div>
+    <div class="problemToSolve">
+      <h2>{{ "contactForm.problemToSolve.headline" | translate }}</h2>
+      <span>{{ "contactForm.problemToSolve.description" | translate }}</span>
+      <div>
+        <span>{{ "contactForm.problemToSolve.cta.text" | translate }}</span>
+        <span class="highlighed">{{
+          "contactForm.problemToSolve.cta.highlightedText" | translate
+        }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="form-and-confirmation">
+    <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+      <div class="seperator"></div>
+      <div class="dialog">
+        <label for="name">{{
+          "contactForm.fields.first.label" | translate
+        }}</label>
+        <input
+          type="text"
+          name="name"
+          #name="ngModel"
+          required
+          [(ngModel)]="contactData.name"
+          [ngClass]="{ invalid: name.invalid && name.touched }"
+          [placeholder]="
+            name.invalid && name.touched
+              ? ('contactForm.fields.first.errorText' | translate)
+              : ('contactForm.fields.first.placeholder' | translate)
+          "
+        />
+      </div>
+      <div class="seperator"></div>
+      <div class="dialog">
+        <label for="email">{{
+          "contactForm.fields.second.label" | translate
+        }}</label>
+        <input
+          pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+          type="email"
+          name="email"
+          #email="ngModel"
+          required
+          [(ngModel)]="contactData.email"
+          [ngClass]="{ invalid: email.invalid && email.touched }"
+          [placeholder]="
+            email.invalid && email.touched
+              ? ('contactForm.fields.second.errorText' | translate)
+              : ('contactForm.fields.second.placeholder' | translate)
+          "
+        />
+      </div>
+      <div class="seperator"></div>
+      <div class="dialog">
+        <label for="message">{{
+          "contactForm.fields.third.label" | translate
+        }}</label>
+        <input
+          type="text"
+          name="message"
+          #message="ngModel"
+          required
+          [(ngModel)]="contactData.message"
+          [ngClass]="{ invalid: message.invalid && message.touched }"
+          [placeholder]="
+            message.invalid && message.touched
+              ? ('contactForm.fields.third.errorText' | translate)
+              : ('contactForm.fields.third.placeholder' | translate)
+          "
+        />
+      </div>
+      <div class="seperator"></div>
+
+      <div class="send">
+        <div class="check">
+          <input
+            type="checkbox"
+            name="checkbox"
+            id="checkbox"
+            [(ngModel)]="isChecked"
+          />
+          <label
+            >{{ "contactForm.privacyPolicy.textOne" | translate }}
+            <span class="highlighed">{{
+              "contactForm.privacyPolicy.linkText" | translate
+            }}</span>
+            {{ "contactForm.privacyPolicy.textTwo" | translate }}</label
+          >
+        </div>
+        <div class="btn-container">
+          <button class="button" type="submit" value="submit" [disabled]="!isChecked">
+            {{ "contactForm.button" | translate }}
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

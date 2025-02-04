@@ -11,9 +11,9 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 export class AboutMeComponent {
 	imgSrc:string[] = [
-		"assets/icons/location_on.svg",
-		"assets/icons/cognition.svg",
-		"assets/icons/new_releases.svg"
+		"assets/icons/colored/location_on.svg",
+		"assets/icons/colored/cognition.svg",
+		"assets/icons/colored/new_releases.svg"
 	]
 	jsonSrc:string[] =[
 		"aboutMe.description.first",

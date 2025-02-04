@@ -24,10 +24,12 @@ section {
         font-weight: 900;
         font-size: 64px;
       }
-      background-image: url(./../../../assets/img/am-skills-bg.png);
-      background-repeat: no-repeat;
-      background-position: left;
-      background-size: cover;
+      background: radial-gradient(
+		circle at left, 
+		rgba(61, 207, 182, 0.2) 0%, 
+		transparent 50%,
+		transparent 100%
+	  );
       padding: 32px;
       border: 1px solid $primary_color;
       border-radius: 30px;

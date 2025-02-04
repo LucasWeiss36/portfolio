@@ -21,7 +21,7 @@ export class MySkillsComponent {
     { name: 'GIT', imgSrc: 'assets/icons/git.svg' },
     { name: 'Rest-API', imgSrc: 'assets/icons/rest-api.svg' },
     { name: 'Scrum', imgSrc: 'assets/icons/scrum.svg' },
-    { name: 'Growth Mindset', imgSrc: 'assets/icons/growth-mindset.svg' },
+    { name: 'Growth Mindset', imgSrc: 'assets/icons/colored/growth-mindset.svg' },
   ];
 
   interests = [

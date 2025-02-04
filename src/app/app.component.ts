@@ -7,6 +7,8 @@ import { AboutMeComponent } from './components/about-me/about-me.component';
 import { MySkillsComponent } from './components/my-skills/my-skills.component';
 import { FeaturedProjectsComponent } from './components/featured-projects/featured-projects.component';
 import { TestimonialsComponent } from './components/testimonials/testimonials.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +21,9 @@ import { TestimonialsComponent } from './components/testimonials/testimonials.co
     AboutMeComponent,
     MySkillsComponent,
     FeaturedProjectsComponent,
-	TestimonialsComponent
+	TestimonialsComponent,
+	ContactComponent,
+	FooterComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

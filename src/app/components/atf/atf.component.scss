@@ -1,9 +1,14 @@
 @import "./../../../styles.scss";
 section {
-  background-image: url("/../../assets/img/atf-bg.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  background-image: linear-gradient(
+    225deg,
+    #08463b,
+    #08463b,
+    $background_color,
+    $background_color,
+    $background_color
+  );
+
   height: 100vh;
   width: 100%;
   color: $white;
@@ -28,18 +33,6 @@ section {
     }
     .btns {
       @include dFlex($jc: center, $ai: center, $g: 48px);
-      > button {
-        border: 1px solid $white;
-        background-color: transparent;
-        border-radius: 50px;
-        padding: 13px 24px;
-        cursor: pointer;
-        transition: 200ms ease-in-out;
-        overflow: hidden;
-        &:hover {
-          font-size: 24px;
-        }
-      }
     }
   }
   .info-left-right {
@@ -54,9 +47,9 @@ section {
     @include dFlex($jc: center, $g: 24px);
     flex-direction: column;
     > a {
-		padding: 18px 12px;
-		border: 1px solid $primary_color;
-		border-radius: 20px;
+      padding: 18px 12px;
+      border: 1px solid $primary_color;
+      border-radius: 20px;
       > img {
         height: 20px;
         animation: arrowLoop 1s infinite ease-in-out;

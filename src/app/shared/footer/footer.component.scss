@@ -1,0 +1,45 @@
+@import "./../../../styles.scss";
+
+section {
+  @include dFlex($jc: space-between);
+  padding: 64px 96px;
+  > .info {
+    @include dFlex($ai: flex-start, $g: 32px);
+    flex-direction: column;
+    > .logo {
+      @include dFlex($jc: center, $ai: flex-end, $g: 8px);
+      > div {
+        @include dFlex($jc: center, $ai: flex-start);
+        flex-direction: column;
+		color: $white;
+		font-family: "Karla";
+		font-size: 16px;
+        > span {
+          font-family: "Fira Code";
+          font-weight: 900;
+          font-size: 30px;
+          margin: -10px 0 0 0;
+        }
+      }
+    }
+    > .ro-lo {
+      @include dFlex($ai: flex-start, $g: 8px);
+      flex-direction: column;
+    }
+  }
+  > span {
+    color: $primary_color;
+    font-family: "Fira Code";
+    font-size: 18px;
+  }
+  > .links {
+    @include dFlex($ai: flex-start, $g: 8px);
+    flex-direction: column;
+    > a {
+      text-decoration: none;
+      color: $white;
+      font-family: "Karla";
+	  font-size: 16px;
+    }
+  }
+}

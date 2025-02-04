@@ -41,7 +41,31 @@
   "portfolio": {
     "headline": "Portfolio",
     "subline": "Featured Projects",
-    "description": "Explore a selection of my work here - Interact with projects to see my skills in action."
+    "description": "Explore a selection of my work here - Interact with projects to see my skills in action.",
+    "projects": {
+      "about": "What is this project about?",
+      "join": {
+        "description": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
+        "links": {
+          "github": "www.github.com",
+          "livetest": "www.test.de"
+        }
+      },
+      "ElPoloLoco": {
+        "description": "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.",
+        "links": {
+          "github": "www.github.com",
+          "livetest": "www.test.de"
+        }
+      },
+      "daBubble": {
+        "description": "This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.",
+        "links": {
+          "github": "www.github.com",
+          "livetest": "www.test.de"
+        }
+      }
+    }
   },
 
   "testimonials": {
@@ -83,6 +107,7 @@
       },
       "second": {
         "label": "What's your email?",
+        "placeholder": "youremail@email.com",
         "errorText": "Oops! your email is required"
       },
       "third": {
@@ -92,7 +117,8 @@
       }
     },
     "privacyPolicy": {
-      "text": "I've read the privacy policy and agree to the processing of my data as outlined.",
+      "textOne": "I've read the ",
+      "textTwo": " and agree to the processing of my data as outlined.",
       "linkText": "privacy policy"
     },
     "button": "Say Hello :)"
@@ -100,7 +126,7 @@
 
   "footerInfo": {
     "role": "Web Developer",
-    "location": "Munich, Germany",
+    "location": "Bad Friedrichshall, Germany",
     "legalNotice": "Legal Notice"
   }
 }

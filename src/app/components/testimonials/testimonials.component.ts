@@ -13,27 +13,27 @@ export class TestimonialsComponent {
   testimonialsKeys = ['first', 'second', 'third'];
 
   currentIndex = 0;
+  isChanging = false;
 
-  get displayedKeys() {
-    const total = this.testimonialsKeys.length;
-    const prevIndex = (this.currentIndex - 1 + total) % total;
-    const nextIndex = (this.currentIndex + 1) % total;
-
-    return [
-      this.testimonialsKeys[prevIndex], // Zeigt das letzte Element
-      ...this.testimonialsKeys,
-      this.testimonialsKeys[nextIndex], // Zeigt das erste Element
-    ];
+  getPrevIndex(): number {
+    return (this.currentIndex - 1 + this.testimonialsKeys.length) % this.testimonialsKeys.length;
   }
 
-  prevSlide() {
-    this.currentIndex =
-      (this.currentIndex - 1 + this.testimonialsKeys.length) %
-      this.testimonialsKeys.length;
+  getNextIndex(): number {
+    return (this.currentIndex + 1) % this.testimonialsKeys.length;
   }
 
-  nextSlide() {
-    this.currentIndex = (this.currentIndex + 1) % this.testimonialsKeys.length;
+  changeSlide(direction: 'next' | 'prev') {
+    if (this.isChanging) return;
+    this.isChanging = true;
+    this.currentIndex = this.getIndexByDirection(direction);
+    setTimeout(() => {
+      this.isChanging = false;
+    }, 500);
+  }
+
+  getIndexByDirection(direction: 'next' | 'prev') {
+    return direction === 'next' ? this.getNextIndex() : this.getPrevIndex();
   }
 
   goToSlide(index: number) {
