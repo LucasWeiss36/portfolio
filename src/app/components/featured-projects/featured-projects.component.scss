@@ -113,7 +113,7 @@ section {
     font-family: "Karla";
   }
   > .projectInfo {
-    @include dFlex();
+    @include dFlex($g:88px);
     padding: 0 90px;
     max-width: 1248px;
     height: 656px;
@@ -202,6 +202,9 @@ section {
 
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
       }
+	  >.nextProject, .close{
+		cursor: pointer;
+	  }
     }
   }
 }

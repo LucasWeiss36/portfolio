@@ -18,7 +18,6 @@ $background_color: rgba(28, 28, 28, 1);
 * {
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;
   color: $white;
 }
 
@@ -37,27 +36,31 @@ h4 {
   font-size: 24px;
   color: $primary_color;
 }
-.button {
-  cursor: pointer;
-  border: 1px solid $white;
-  background-color: transparent;
-  padding: 13px 24px;
-  border-radius: 24px;
-  &:hover{
-	color: $primary_color;
-	border-color: $primary_color;
-  }
+
+a{
+	text-decoration: none
 }
 
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px transparent inset;
   box-shadow: 0 0 0px 1000px transparent inset;
   -webkit-text-fill-color: $white_80;
-  transition: background-color 5000s ease-in-out 0s; 
+  transition: background-color 5000s ease-in-out 0s;
   font-family: "Kira";
   font-size: 18px;
 }
 
+.button {
+	cursor: pointer;
+	border: 1px solid $white;
+	background-color: transparent;
+	padding: 13px 24px;
+	border-radius: 24px;
+	&:hover {
+	  color: $primary_color;
+	  border-color: $primary_color;
+	}
+  }
 
 /* fira-code-300 - latin */
 @font-face {

@@ -1,4 +1,4 @@
-<section>
+<section id="projects">
   <h4>{{ "portfolio.headline" | translate }}</h4>
   <div>
     <h1>{{ "portfolio.subline" | translate }}</h1>
@@ -68,14 +68,14 @@
                 </div>
               </div>
               <div class="buttons">
-                <a class="button">
+                <a class="button" target="_blank" href="https://github.com/LucasWeiss36?tab=repositories">
                   Github
                   <img
                     src="./../../../assets/icons/colored/arrow_outward.svg"
                     alt=""
                   />
                 </a>
-                <a class="button">
+                <a class="button" target="_blank">
                   Live Test
                   <img
                     src="./../../../assets/icons/colored/arrow_outward.svg"
@@ -86,9 +86,10 @@
             </div>
             <div class="rightSide">
               <img
+			  class="close"
                 (click)="hideClickedProject()"
                 src="./../../../assets/icons/close_small.svg"
-                alt=""
+                alt="close"
               />
               <img
                 class="preview"
@@ -100,7 +101,7 @@
                 <span>Next Project</span>
                 <img
                   src="./../../../assets/icons/colored/arrow_forward.svg"
-                  alt=""
+                  alt="nextProject"
                 />
               </div>
             </div>

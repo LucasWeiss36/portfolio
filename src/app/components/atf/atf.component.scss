@@ -3,7 +3,7 @@ section {
   background-image: linear-gradient(
     225deg,
     #08463b,
-    #08463b,
+    rgb(8, 70, 59),
     $background_color,
     $background_color,
     $background_color
@@ -123,3 +123,8 @@ section {
     transform: translateY(10px);
   }
 }
+
+
+// @media (max-width: 320px){
+
+// }
