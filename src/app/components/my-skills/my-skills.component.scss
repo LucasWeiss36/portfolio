@@ -121,3 +121,47 @@ section {
     left: 29px;
   }
 }
+
+@media (max-width: 320px) {
+  section {
+    padding: 0 16px 100px;
+    h4 {
+      font-size: 18px;
+    }
+    > div {
+      gap: 40px;
+      flex-direction: column;
+      > .skillSet {
+        padding: 24px 32px;
+        gap: 24px;
+        h1 {
+          font-size: 40px;
+        }
+        > div {
+          span {
+            font-size: 16px;
+          }
+          > div {
+            > h2 {
+              font-size: 20px;
+              > span {
+                font-size: 20px;
+              }
+            }
+          }
+        }
+      }
+      > .technologies {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        grid-column-gap: 16px;
+        grid-row-gap: 32px;
+        > div {
+          > span {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}

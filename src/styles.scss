@@ -62,6 +62,15 @@ input:-webkit-autofill {
 	}
   }
 
+  @media (max-width: 320px){
+	.button{
+		padding: 10px 16px;
+	}
+	
+	
+	
+  }
+
 /* fira-code-300 - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */

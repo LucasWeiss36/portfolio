@@ -9,13 +9,13 @@ section {
     font-size: 32px;
   }
   > .slide-selection {
-    @include dFlex($g:24px);
+    @include dFlex($g: 24px);
     height: 30vh;
     position: relative;
     > .testimonial-wrapper {
       position: absolute;
-	  width: 640px;
-	  height: 275px;
+      width: 640px;
+      height: 275px;
       @include dFlex();
       > .testimonial {
         @include dFlex($jc: space-between, $ai: unset);
@@ -23,25 +23,26 @@ section {
         border: 2px solid $primary_color;
         border-radius: 32px;
         padding: 40px;
-        background-color: #29554D;
+        background-color: #29554d;
         width: 640px;
         height: 275px;
         font-size: 24px;
         font-family: "Karla";
-		text-align: justify;
+        text-align: justify;
         transition: transform 500ms ease-in-out, opacity 25ms ease-in-out,
           scale 500ms ease-in-out;
         > div {
           @include dFlex($jc: space-between);
           > .line {
-            width: 60%;
+            width: -webkit-fill-available;
             height: 2px;
             background-color: $white;
           }
           > div {
-			@include dFlex();
+            @include dFlex();
             > span {
               font-size: 16px;
+              width: max-content;
             }
           }
         }
@@ -86,4 +87,47 @@ section {
   transform: translateX(92.5%) scale(0.75);
   z-index: 1;
   opacity: 0.7;
+}
+
+@media (max-width: 320px) {
+  section {
+    margin: 100px 0 0 0;
+    gap: unset;
+    height: 75vh;
+    > h4 {
+      text-align: center;
+      padding: 0 16px;
+      font-size: 24px;
+    }
+    > .slide-selection {
+      height: 100vh;
+      > .testimonial-wrapper {
+        width: 304px;
+        height: 360px;
+        > .testimonial {
+          > span {
+            font-size: 18px;
+          }
+          > div {
+            > .line {
+            }
+            > div {
+              > span {
+              }
+            }
+          }
+        }
+      }
+    }
+    > .navigation {
+      > img {
+        height: 32px;
+        width: 32px;
+      }
+      > .dots {
+        > span {
+        }
+      }
+    }
+  }
 }

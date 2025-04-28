@@ -1,5 +1,7 @@
 @import "./../../../styles.scss";
 
+
+
 section {
   @include dFlex($ai: flex-start, $g: 20);
   padding: 0 0 8px 96px;
@@ -88,13 +90,13 @@ section {
     }
   }
 }
-.soon{
-	border: 1px solid red;
-	color: red;
-	&:hover{
-		border: 1px solid $white;
-		color: $white;
-	}
+.soon {
+  border: 1px solid red;
+  color: red;
+  &:hover {
+    border: 1px solid $white;
+    color: $white;
+  }
 }
 
 .backdrop {
@@ -113,7 +115,7 @@ section {
     font-family: "Karla";
   }
   > .projectInfo {
-    @include dFlex($g:88px);
+    @include dFlex($g: 88px);
     padding: 0 90px;
     max-width: 1248px;
     height: 656px;
@@ -172,6 +174,15 @@ section {
           }
         }
       }
+      > .nextProject {
+        @include dFlex($g: 16px);
+        flex-direction: row;
+        //   position: relative;
+        //   top: 275px;
+        span {
+          color: $primary_color;
+        }
+      }
       .buttons {
         @include dFlex($g: 32px);
         flex-direction: row;
@@ -188,12 +199,6 @@ section {
     > .rightSide {
       @include dFlex($ai: flex-end);
       flex-direction: column;
-      > div {
-        @include dFlex($g: 16px);
-        span {
-          color: $primary_color;
-        }
-      }
       > .preview {
         width: 520px;
         height: 370px;
@@ -202,9 +207,127 @@ section {
 
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
       }
-	  >.nextProject, .close{
-		cursor: pointer;
-	  }
+    }
+
+    .nextProject,
+    .close {
+      cursor: pointer;
+    }
+    .close {
+      //   position: relative;
+      //   top: -275px;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  section {
+    padding: 0 16px;
+    > h4 {
+      font-size: 18px;
+    }
+    > div {
+      > h1 {
+        font-size: 46px;
+      }
+      > span {
+        font-size: 16px;
+        width: unset;
+      }
+      .project {
+        > .seperator {
+          width: auto;
+        }
+        > div {
+          flex-direction: column;
+          @include dFlex($ai: flex-start, $g: 10px);
+          &:not(.seperator) {
+            padding: 32px 0;
+          }
+          > h4 {
+          }
+          > .technologies {
+            > .text-sperator {
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .backdrop {
+    @include dFlex();
+    > .projectInfo {
+      justify-content: flex-end;
+      align-items: flex-end;
+      height: 100%;
+      border-radius: 0;
+      flex-direction: column-reverse;
+      padding: 0 12px;
+      gap: 0;
+      > .leftSide {
+        padding: 0;
+        gap: 0;
+        .numberName {
+          padding: 0;
+          display: unset;
+          gap: 0;
+          > h1 {
+            font-size: 56px;
+          }
+          > h4 {
+            font-size: 42px;
+          }
+        }
+        .about {
+        }
+        .description {
+          font-size: 16px;
+          width: 100%;
+        }
+		.nextProject {
+			padding: 24px 0;
+			position: relative;
+			left: 150px;
+		  }
+        > div {
+          gap: 16px;
+          padding: 24px 0;
+		  
+          > .technology_container {
+            .technologies_small {
+              .technology {
+              }
+            }
+		}
+		
+	}
+        .buttons {
+          padding: 0;
+          > a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            > img {
+            }
+          }
+        }
+      }
+      .close {
+        padding: 30px 18px 40px 0;
+      }
+      > .rightSide {
+        > div {
+          span {
+          }
+        }
+        > .preview {
+          margin: 0;
+          width: 296px;
+          height: auto;
+        }
+      }
     }
   }
 }

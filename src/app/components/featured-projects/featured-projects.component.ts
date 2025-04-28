@@ -58,7 +58,7 @@ export class FeaturedProjectsComponent {
 
   hideClickedProject(): void {
     this.clickedIndex = null;
-    document.body.style.overflow = 'unset';
+    document.body.style.overflow = '';
   }
 
   nextProject() {

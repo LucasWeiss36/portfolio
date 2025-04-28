@@ -58,4 +58,39 @@ header {
 .toggle-option:not(.active) {
   color: $primary_color_50;
 }
+.dNone{
+	display: none;
+}
 
+
+
+
+@media(max-width:320px){
+	header{
+		flex-direction: row-reverse;
+		justify-content: center;
+        align-items: flex-start;
+	}
+	nav{
+		display: none!important;
+		flex-direction: column;
+		background-color: $background_color;
+		padding: 40px 77px;
+		border-radius: 30px;
+		background-image: linear-gradient(
+    225deg,
+    #08463b,
+    rgba(8, 70, 59, 0.5),
+    $background_color,
+    $background_color,
+    $background_color
+  );
+	}
+	.toggle-switch{
+		order: 1;
+	}
+
+	.name>span{
+		display: none;
+	}
+}

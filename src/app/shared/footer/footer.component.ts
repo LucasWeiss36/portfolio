@@ -10,5 +10,9 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
+	isMobile = false;
 
+	ngOnInit(): void {
+		this.isMobile = window.innerWidth <= 320;
+	}
 }

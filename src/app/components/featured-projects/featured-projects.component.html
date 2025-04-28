@@ -46,7 +46,7 @@
                 <h1>0{{ i + 1 }}</h1>
                 <h4>{{ project.name }}</h4>
               </div>
-              <div>
+              <div class="info">
                 <span class="about">{{
                   "portfolio.projects.about" | translate
                 }}</span>
@@ -83,30 +83,31 @@
                   />
                 </a>
               </div>
+			  <div class="nextProject" *ngIf="clickedIndex != 2" (click)="nextProject()">
+				<span>Next Project</span>
+				<img
+				src="./../../../assets/icons/colored/arrow_forward.svg"
+				alt="nextProject"
+				/>
+			</div>
             </div>
+			<span *ngIf="clickedIndex == 2" class="button soon">Coming Soon</span>
             <div class="rightSide">
-              <img
-			  class="close"
-                (click)="hideClickedProject()"
-                src="./../../../assets/icons/close_small.svg"
-                alt="close"
-              />
-              <img
-                class="preview"
-                [src]="'./../../../assets/img/' + projects[i].image"
-                [alt]="projects[i].name + ' Image'"
-              />
-			  <span *ngIf="clickedIndex == 2" class="button soon">Coming Soon</span>
-              <div class="nextProject" *ngIf="clickedIndex != 2" (click)="nextProject()">
-                <span>Next Project</span>
-                <img
-                  src="./../../../assets/icons/colored/arrow_forward.svg"
-                  alt="nextProject"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+				<img
+				class="preview"
+				[src]="'./../../../assets/img/' + projects[i].image"
+				[alt]="projects[i].name + ' Image'"
+				/>
+			</div>
+			<img
+			class="close"
+			(click)="hideClickedProject()"
+			src="./../../../assets/icons/close_small.svg"
+			alt="close"
+			/>
+			
+		</div>
+	</div>
       </ng-container>
     </div>
   </div>

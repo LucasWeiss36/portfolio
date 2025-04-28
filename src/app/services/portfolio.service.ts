@@ -1,14 +1,17 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PortfolioService {
-
   private languageSubject = new BehaviorSubject<string>('en');
   currentLanguage$ = this.languageSubject.asObservable();
+  screenWidth: number | null = null;
+  ngOnInit() {
+    this.screenWidth = window.innerWidth; // Bildschirmbreite einmalig beim Laden setzen
+    console.log('Screen Width:', this.screenWidth); // Optional zur Kontrolle
+  }
 
   constructor() {
     const savedLanguage = sessionStorage.getItem('language') || 'en';
@@ -21,7 +24,7 @@ export class PortfolioService {
   }
 
   getLanguageFromSessionStorage() {
-    const lang = sessionStorage.getItem('language') || 'en'; 
+    const lang = sessionStorage.getItem('language') || 'en';
     return lang;
   }
 }

@@ -29,6 +29,7 @@ section {
       > h1 {
         font-size: 128px;
         font-family: "Karla";
+        color: $white;
       }
     }
     .btns {
@@ -64,12 +65,15 @@ section {
   .info-right {
     @include dFlex($jc: center, $ai: center, $g: 32px);
     flex-direction: column;
-    > a {
+    > .mailto-letters {
       writing-mode: vertical-rl;
       rotate: -180deg;
       text-decoration: none;
       color: $white;
       letter-spacing: 1px;
+    }
+    > .mailto-icon {
+      display: none;
     }
     .icons-right {
       @include dFlex($jc: center, $g: 24px);
@@ -124,7 +128,58 @@ section {
   }
 }
 
+@media (max-width: 320px) {
+  section {
+    > .banner {
+      > div {
+        > span {
+          font-size: 24px;
+        }
+      }
+    }
+    > main {
+      .headline {
+        > h2 {
+          font-size: 24px;
+        }
+        > h1 {
+          font-size: 62px;
+          text-align: center;
+        }
+      }
+      .btns {
+        @include dFlex($g: 24px);
+        > a {
+          font-size: 18px;
+        }
+      }
+    }
+    .info-left-right {
+      padding: 0 16px;
+    }
+    .info-left {
+      > a {
+        > img {
+        }
+      }
+      > div {
+        height: 175px;
+      }
+    }
+    .info-right {
+      > .mailto-letters {
+        display: none;
+      }
+      > .mailto-icon {
+        display: block;
+      }
+      .icons-right {
+        @include dFlex($g: 12px);
+        > div {
+          height: 112px;
+        }
+      }
+    }
 
-// @media (max-width: 320px){
-
-// }
+  }
+}

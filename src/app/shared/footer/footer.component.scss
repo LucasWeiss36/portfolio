@@ -4,6 +4,7 @@ section {
   @include dFlex($jc: space-between);
   padding: 64px 96px;
   > .info {
+    order: 1;
     @include dFlex($ai: flex-start, $g: 32px);
     flex-direction: column;
     > .logo {
@@ -11,9 +12,7 @@ section {
       > div {
         @include dFlex($jc: center, $ai: flex-start);
         flex-direction: column;
-		color: $white;
-		font-family: "Karla";
-		font-size: 16px;
+        color: $white;
         > span {
           font-family: "Fira Code";
           font-weight: 900;
@@ -27,19 +26,72 @@ section {
       flex-direction: column;
     }
   }
-  > span {
+  > .copyright {
+    order: 2;
     color: $primary_color;
     font-family: "Fira Code";
     font-size: 18px;
   }
   > .links {
+    order: 3;
     @include dFlex($ai: flex-start, $g: 8px);
     flex-direction: column;
     > a {
       text-decoration: none;
       color: $white;
       font-family: "Karla";
-	  font-size: 16px;
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  section {
+    padding: 64px 16px 0;
+	flex-direction: column;
+    > .info {
+		align-items: center;
+		order: 1;
+		gap: 16px;
+		.logo {
+        img {
+          width: 50px;
+        }
+        > div {
+          > span {
+            font-size: 24px;
+          }
+        }
+      }
+      > div {
+        > span {
+        }
+      }
+	  > .ro-lo {
+		align-items: center;
+		>div{
+			@include dFlex($ai: center, $g: 4px);
+			>img{
+				width: 16px;
+			}
+		}
+
+		 span {
+		  font-family: "Karla";
+		  font-size: 14px;
+		}
+	  }
+    }
+  }
+  .copyright {
+	padding: 8px 0 16px ;
+    order: 4 !important;
+  }
+  .links {
+	padding: 16px 0;
+	flex-direction: row!important;
+    order: 2;
+    > a {
     }
   }
 }
