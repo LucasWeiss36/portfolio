@@ -1,5 +1,5 @@
 <header>
-  <nav>
+  <nav [ngClass]="{ dNone: !menuIsOpen }">
     <div class="toggle-switch">
       <div
         class="toggle-option"
@@ -23,8 +23,18 @@
     <a>{{ "nav.aboutMe" | translate }}</a>
     <a>{{ "nav.skills" | translate }}</a>
     <a>{{ "nav.projects" | translate }}</a>
-</nav>
-<!-- <img ngClass="portfolioService.screenWidth <= 320" src="./../../../assets/icons/burger-menu.svg" alt=""> -->
+  </nav>
+  <img
+    [ngClass]="{ dNone: hideBurgerMenu }"
+    class="burger"
+    [src]="
+      menuIsOpen
+        ? 'assets/icons/close_small.svg'
+        : 'assets/icons/burger-menu.svg'
+    "
+    (click)="toggleBurgerMenu()"
+    alt="Menü öffnen / schließen"
+  />
   <div class="logo">
     <img src="./../../../assets/icons/logo.svg" alt="logo" />
 

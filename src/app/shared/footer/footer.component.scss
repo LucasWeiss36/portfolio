@@ -1,7 +1,7 @@
 @import "./../../../styles.scss";
 
 section {
-  @include dFlex($jc: space-between);
+  @include dFlex($jc: space-between, $ai: flex-end);
   padding: 64px 96px;
   > .info {
     order: 1;
@@ -24,6 +24,13 @@ section {
     > .ro-lo {
       @include dFlex($ai: flex-start, $g: 8px);
       flex-direction: column;
+      font-family: "Karla";
+      > div {
+        @include dFlex($ai: center, $g: 4px);
+        span {
+          max-width: 150px;
+        }
+      }
     }
   }
   > .copyright {
@@ -45,15 +52,22 @@ section {
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 1050px) {
+  section {
+    padding: 64px 16px 32px;
+  }
+}
+
+@media (max-width: 480px) {
   section {
     padding: 64px 16px 0;
-	flex-direction: column;
+    flex-direction: column;
+    align-items: center;
     > .info {
-		align-items: center;
-		order: 1;
-		gap: 16px;
-		.logo {
+      align-items: center;
+      order: 1;
+      gap: 16px;
+      .logo {
         img {
           width: 50px;
         }
@@ -63,29 +77,30 @@ section {
           }
         }
       }
-	  > .ro-lo {
-		align-items: center;
-		>div{
-			@include dFlex($ai: center, $g: 4px);
-			>img{
-				width: 16px;
-			}
-		}
+      > .ro-lo {
+        align-items: center;
+        > div {
+          @include dFlex($ai: center, $g: 4px);
+          span {
+            max-width: unset;
+          }
+        }
+        span {
+          text-align: center;
 
-		 span {
-		  font-family: "Karla";
-		  font-size: 14px;
-		}
-	  }
+          font-family: "Karla";
+          font-size: 14px;
+        }
+      }
     }
   }
   .copyright {
-	padding: 8px 0 16px ;
+    padding: 8px 0 16px;
     order: 4 !important;
   }
   .links {
-	padding: 16px 0;
-	flex-direction: row!important;
+    padding: 16px 0;
+    flex-direction: row !important;
     order: 2;
   }
 }

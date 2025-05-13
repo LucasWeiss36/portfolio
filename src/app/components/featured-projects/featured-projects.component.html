@@ -2,7 +2,7 @@
   <h4>{{ "portfolio.headline" | translate }}</h4>
   <div>
     <h1>{{ "portfolio.subline" | translate }}</h1>
-    <span>{{ "portfolio.description" | translate }}</span>
+    <span class="description">{{ "portfolio.description" | translate }}</span>
     <div>
       <div class="project" *ngFor="let project of projects; let i = index">
         <div class="seperator" *ngIf="i == 0"></div>
@@ -39,7 +39,11 @@
         </div>
       </div>
       <ng-container *ngFor="let project of projects; let i = index">
-        <div *ngIf="i == clickedIndex" class="backdrop" (click)="hideClickedProject()">
+        <div
+          *ngIf="i == clickedIndex"
+          class="backdrop"
+          (click)="hideClickedProject()"
+        >
           <div class="projectInfo" (click)="$event.stopPropagation()">
             <div class="leftSide">
               <div class="numberName">
@@ -68,7 +72,11 @@
                 </div>
               </div>
               <div class="buttons">
-                <a class="button" target="_blank" href="https://github.com/LucasWeiss36?tab=repositories">
+                <a
+                  class="button"
+                  target="_blank"
+                  href="https://github.com/LucasWeiss36?tab=repositories"
+                >
                   Github
                   <img
                     src="./../../../assets/icons/colored/arrow_outward.svg"
@@ -83,31 +91,34 @@
                   />
                 </a>
               </div>
-			  <div class="nextProject" *ngIf="clickedIndex != 2" (click)="nextProject()">
-				<span>Next Project</span>
-				<img
-				src="./../../../assets/icons/colored/arrow_forward.svg"
-				alt="nextProject"
-				/>
-			</div>
+              <div class="nextProject" (click)="nextProject()">
+                <span *ngIf="clickedIndex != 2">Next Project</span>
+                <span *ngIf="clickedIndex == 2" class="button soon"
+                  >Coming Soon</span
+                >
+                <img
+                  *ngIf="clickedIndex != 2"
+                  src="./../../../assets/icons/colored/arrow_forward.svg"
+                  alt="nextProject"
+                />
+              </div>
             </div>
-			<span *ngIf="clickedIndex == 2" class="button soon">Coming Soon</span>
+
             <div class="rightSide">
-				<img
-				class="preview"
-				[src]="'./../../../assets/img/' + projects[i].image"
-				[alt]="projects[i].name + ' Image'"
-				/>
-			</div>
-			<img
-			class="close"
-			(click)="hideClickedProject()"
-			src="./../../../assets/icons/close_small.svg"
-			alt="close"
-			/>
-			
-		</div>
-	</div>
+              <img
+                class="preview"
+                [src]="'./../../../assets/img/' + projects[i].image"
+                [alt]="projects[i].name + ' Image'"
+              />
+            </div>
+            <img
+              class="close"
+              (click)="hideClickedProject()"
+              src="./../../../assets/icons/close_small.svg"
+              alt="close"
+            />
+          </div>
+        </div>
       </ng-container>
     </div>
   </div>

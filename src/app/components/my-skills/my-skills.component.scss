@@ -122,7 +122,38 @@ section {
   }
 }
 
+@media (max-width: 1050px) {
+  section {
+	padding: 56px 16px;
+    > div {
+      .technologies {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+}
+
+@media (max-width: 780px) {
+  section {
+    > div {
+		gap: 56px;
+		.technologies {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+  }
+}
+
 @media (max-width: 320px) {
+  section {
+    > div {	
+      .technologies {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+}
+@media (max-width: 480px) {
   section {
     padding: 0 16px 100px;
     h4 {
@@ -152,8 +183,8 @@ section {
         }
       }
       > .technologies {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(5, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
         grid-column-gap: 16px;
         grid-row-gap: 32px;
         > div {

@@ -7,11 +7,6 @@ import { BehaviorSubject } from 'rxjs';
 export class PortfolioService {
   private languageSubject = new BehaviorSubject<string>('en');
   currentLanguage$ = this.languageSubject.asObservable();
-  screenWidth: number | null = null;
-  ngOnInit() {
-    this.screenWidth = window.innerWidth; // Bildschirmbreite einmalig beim Laden setzen
-    console.log('Screen Width:', this.screenWidth); // Optional zur Kontrolle
-  }
 
   constructor() {
     const savedLanguage = sessionStorage.getItem('language') || 'en';

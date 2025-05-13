@@ -1,7 +1,5 @@
 @import "./../../../styles.scss";
 
-
-
 section {
   @include dFlex($ai: flex-start, $g: 20);
   padding: 0 0 8px 96px;
@@ -47,6 +45,9 @@ section {
         }
       }
     }
+    .description {
+      font-size: 18px;
+    }
   }
 }
 
@@ -91,10 +92,8 @@ section {
   }
 }
 .soon {
-  border: 1px solid red;
-  color: red;
+  border: none;
   &:hover {
-    border: 1px solid $white;
     color: $white;
   }
 }
@@ -108,17 +107,18 @@ section {
   background-color: rgba(0, 0, 0, 0.75);
   height: 100%;
   width: 100%;
-  z-index: 100;
+  z-index: 1000;
   padding: 0 !important;
   h1,
   span {
     font-family: "Karla";
   }
   > .projectInfo {
+    z-index: 1010;
     @include dFlex($g: 88px);
     padding: 0 90px;
     max-width: 1248px;
-    height: 656px;
+    height: 670px;
     background-color: $background_color;
     background-image: linear-gradient(
       210deg,
@@ -162,7 +162,6 @@ section {
         @include dFlex($ai: flex-start, $g: 24px);
         flex-direction: column;
         > .technology_container {
-          //   flex-direction: row;
           @include dFlex($jc: flex-start, $g: 16px);
 
           .technologies_small {
@@ -176,9 +175,9 @@ section {
       }
       > .nextProject {
         @include dFlex($g: 16px);
+        position: relative;
+        left: 1072px;
         flex-direction: row;
-        //   position: relative;
-        //   top: 275px;
         span {
           color: $primary_color;
         }
@@ -214,19 +213,97 @@ section {
       cursor: pointer;
     }
     .close {
-      //   position: relative;
-      //   top: -275px;
+      position: relative;
+      top: -275px;
+    }
+  }
+}
+@media (max-width: 1050px) {
+  section {
+	padding: 0 0 8px 16px;
+    .backdrop {
+      > .projectInfo {
+        height: 100%;
+        gap: 20px;
+        > .leftSide {
+          .description {
+            width: unset;
+          }
+          .nextProject {
+            left: 820px;
+          }
+        }
+        > .rightSide {
+          > .preview {
+            height: unset;
+          }
+        }
+        .close {
+          top: -300px;
+        }
+      }
     }
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 780px) {
+  section {
+    padding: 0 16px;
+    > div {
+      width: -webkit-fill-available;
+      > h1 {
+      }
+      > span {
+      }
+      > div {
+        width: -webkit-fill-available;
+        .project {
+          > .seperator {
+            width: auto;
+          }
+          > div {
+          }
+        }
+      }
+    }
+    .backdrop {
+      > .projectInfo {
+        padding: 0 16px;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        justify-content: space-between;
+        > .leftSide {
+          .description {
+          }
+          .nextProject {
+            left: 612px;
+          }
+        }
+        > .rightSide {
+          > .preview {
+            max-width: 300px;
+          }
+        }
+        .close {
+          top: -310px;
+        }
+      }
+    }
+  }
+  .popup {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
   section {
     padding: 0 16px;
     > h4 {
       font-size: 18px;
     }
     > div {
+      gap: 32px;
       > h1 {
         font-size: 46px;
       }
@@ -234,98 +311,150 @@ section {
         font-size: 16px;
         width: unset;
       }
-      .project {
-        > .seperator {
-          width: auto;
-        }
-        > div {
-          flex-direction: column;
-          @include dFlex($ai: flex-start, $g: 10px);
-          &:not(.seperator) {
-            padding: 32px 0;
+      > div {
+        width: -webkit-fill-available;
+        .project {
+          > .seperator {
+            width: auto;
           }
-          > h4 {
-          }
-          > .technologies {
-            > .text-sperator {
+          > div {
+            flex-direction: column;
+            @include dFlex($ai: flex-start, $g: 10px);
+            &:not(.seperator) {
+              padding: 12px 0;
             }
           }
         }
       }
     }
-  }
 
-  .backdrop {
-    @include dFlex();
-    > .projectInfo {
-      justify-content: flex-end;
-      align-items: flex-end;
-      height: 100%;
-      border-radius: 0;
-      flex-direction: column-reverse;
-      padding: 0 12px;
-      gap: 0;
-      > .leftSide {
-        padding: 0;
+    .backdrop {
+      @include dFlex();
+      justify-content: flex-start;
+      > .projectInfo {
+        justify-content: flex-end;
+        height: 100%;
+        border-radius: 0;
+        flex-direction: column-reverse;
+        padding: 0 12px;
         gap: 0;
-        .numberName {
+
+        > .leftSide {
+          align-items: unset;
           padding: 0;
-          display: unset;
           gap: 0;
-          > h1 {
-            font-size: 56px;
-          }
-          > h4 {
-            font-size: 42px;
-          }
-        }
-        .about {
-        }
-        .description {
-          font-size: 16px;
-          width: 100%;
-        }
-		.nextProject {
-			padding: 24px 0;
-			position: relative;
-			left: 150px;
-		  }
-        > div {
-          gap: 16px;
-          padding: 24px 0;
-		  
-          > .technology_container {
-            .technologies_small {
-              .technology {
-              }
+          .numberName {
+            padding: 0;
+
+            gap: 0;
+            > h1 {
+              font-size: 56px;
             }
-		}
-		
-	}
-        .buttons {
-          padding: 0;
-          > a {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            > h4 {
+              font-size: 42px;
+            }
+          }
+          .about {
+            font-size: 18px;
+          }
+          .description {
             font-size: 16px;
-            > img {
+            width: fit-content;
+          }
+          .nextProject {
+            padding: 24px 0;
+            position: relative;
+            left: 138px;
+          }
+          > div {
+            gap: 12px;
+            padding: 0 0 16px 0;
+
+            > .technology_container {
+              flex-wrap: wrap;
+            }
+          }
+          .buttons {
+            padding: 0;
+            > a {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 16px;
             }
           }
         }
-      }
-      .close {
-        padding: 30px 18px 40px 0;
-      }
-      > .rightSide {
-        > div {
-          span {
+        .close {
+          padding: 30px 0 40px 0;
+          display: flex;
+          position: relative;
+          left: 190px;
+          top: 16px;
+        }
+        > .rightSide {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          > .preview {
+            margin: 0;
+            width: 400px;
+            height: auto;
           }
         }
-        > .preview {
-          margin: 0;
-          width: 296px;
-          height: auto;
+      }
+    }
+  }
+  .soon {
+    margin: 16px 0 0 0;
+  }
+}
+
+@media (max-width: 410px) {
+  section {
+    .backdrop {
+      > .projectInfo {
+        align-items: flex-start;
+        > .leftSide {
+          .nextProject {
+            left: 112px;
+          }
+        }
+        .close {
+          left: 332px;
+        }
+        > .rightSide {
+          > .preview {
+            width: 350px;
+          }
+        }
+        .nextProject {
+          left: 100px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  section {
+    .backdrop {
+      > .projectInfo {
+        align-items: flex-start;
+        > .leftSide {
+          .nextProject {
+            left: 86px;
+          }
+          > div {
+            padding: 16px 0;
+          }
+        }
+        .close {
+          left: 278px;
+        }
+        > .rightSide {
+          > .preview {
+            width: 296px;
+          }
         }
       }
     }

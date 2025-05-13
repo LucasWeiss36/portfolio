@@ -23,8 +23,10 @@
           "contactForm.fields.first.label" | translate
         }}</label>
         <input
+          autocomplete="false"
           type="text"
           name="name"
+          id="name"
           #name="ngModel"
           required
           [(ngModel)]="contactData.name"
@@ -42,8 +44,10 @@
           "contactForm.fields.second.label" | translate
         }}</label>
         <input
+          autocomplete="false"
           pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
           type="email"
+		  id="email"
           name="email"
           #email="ngModel"
           required
@@ -64,6 +68,7 @@
         <input
           type="text"
           name="message"
+		  id="message"
           #message="ngModel"
           required
           [(ngModel)]="contactData.message"
@@ -85,7 +90,7 @@
             id="checkbox"
             [(ngModel)]="isChecked"
           />
-          <label
+          <label for="checkbox"
             >{{ "contactForm.privacyPolicy.textOne" | translate }}
             <span class="highlighed">{{
               "contactForm.privacyPolicy.linkText" | translate
@@ -94,7 +99,12 @@
           >
         </div>
         <div class="btn-container">
-          <button class="button" type="submit" value="submit" [disabled]="!isChecked">
+          <button
+            class="button"
+            type="submit"
+            value="submit"
+            [disabled]="!isChecked"
+          >
             {{ "contactForm.button" | translate }}
           </button>
         </div>
