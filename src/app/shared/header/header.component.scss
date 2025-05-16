@@ -12,6 +12,7 @@ header {
     @include dFlex($g: 24px);
     font-family: "Fira Code";
     font-size: 20px;
+
     .toggle-switch {
       @include dFlex($jc: center, $ai: center);
       border: 1px solid $primary_color;
@@ -47,7 +48,7 @@ header {
 .toggle-option {
   cursor: pointer;
   color: $white;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 125ms ease, color 125ms ease;
 }
 
 .toggle-option.active {
@@ -58,6 +59,7 @@ header {
 .toggle-option:not(.active) {
   color: $primary_color_50;
 }
+
 .dNone {
   display: none !important;
 }
@@ -66,8 +68,7 @@ header {
   header {
     padding: 16px;
   }
-  nav {
-  }
+
   .toggle-switch {
     order: 1;
   }

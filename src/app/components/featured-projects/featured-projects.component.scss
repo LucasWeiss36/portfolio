@@ -16,9 +16,9 @@ section {
       width: 450px;
       text-wrap: wrap;
     }
+
     .project {
       cursor: pointer;
-
       > .seperator {
         width: 880px;
         height: 2px;
@@ -45,6 +45,7 @@ section {
         }
       }
     }
+
     .description {
       font-size: 18px;
     }
@@ -54,13 +55,13 @@ section {
 .popup {
   position: absolute;
   transform: translate(250%, -55%);
-  transition: opacity 175ms ease-in-out;
+  transition: opacity 125ms ease-in-out;
   opacity: 0;
   > img {
     height: 200px;
     width: 300px;
     border-radius: 12px;
-    transition: opacity 175ms ease-in-out;
+    transition: opacity 125ms ease-in-out;
   }
   &.shift-down {
     transform: translate(250%, -55%);
@@ -83,6 +84,7 @@ section {
     );
   }
 }
+
 .project {
   &:hover {
     .popup {
@@ -91,8 +93,10 @@ section {
     }
   }
 }
+
 .soon {
   border: none;
+  cursor: default;
   &:hover {
     color: $white;
   }
@@ -133,6 +137,7 @@ section {
     > .leftSide {
       @include dFlex($ai: flex-start, $g: 40px);
       flex-direction: column;
+
       .numberName {
         display: flex;
         flex-direction: column;
@@ -148,12 +153,14 @@ section {
           color: $white;
         }
       }
+
       .about {
         color: $primary_color;
         font-family: "Fira Code";
         font-size: 24px;
         font-weight: bold;
       }
+
       .description {
         display: block;
         width: 480px;
@@ -163,7 +170,6 @@ section {
         flex-direction: column;
         > .technology_container {
           @include dFlex($jc: flex-start, $g: 16px);
-
           .technologies_small {
             @include dFlex($g: 4px);
             .technology {
@@ -182,6 +188,7 @@ section {
           color: $primary_color;
         }
       }
+
       .buttons {
         @include dFlex($g: 32px);
         flex-direction: row;
@@ -212,6 +219,7 @@ section {
     .close {
       cursor: pointer;
     }
+
     .close {
       position: relative;
       top: -275px;
@@ -220,7 +228,8 @@ section {
 }
 @media (max-width: 1050px) {
   section {
-	padding: 0 0 8px 16px;
+    padding: 0 0 8px 16px;
+
     .backdrop {
       > .projectInfo {
         height: 100%;
@@ -229,6 +238,7 @@ section {
           .description {
             width: unset;
           }
+
           .nextProject {
             left: 820px;
           }
@@ -238,6 +248,7 @@ section {
             height: unset;
           }
         }
+
         .close {
           top: -300px;
         }
@@ -251,21 +262,17 @@ section {
     padding: 0 16px;
     > div {
       width: -webkit-fill-available;
-      > h1 {
-      }
-      > span {
-      }
       > div {
         width: -webkit-fill-available;
+
         .project {
           > .seperator {
             width: auto;
           }
-          > div {
-          }
         }
       }
     }
+
     .backdrop {
       > .projectInfo {
         padding: 0 16px;
@@ -274,8 +281,6 @@ section {
         border-radius: 0;
         justify-content: space-between;
         > .leftSide {
-          .description {
-          }
           .nextProject {
             left: 612px;
           }
@@ -285,12 +290,14 @@ section {
             max-width: 300px;
           }
         }
+
         .close {
           top: -310px;
         }
       }
     }
   }
+
   .popup {
     display: none;
   }
@@ -305,7 +312,7 @@ section {
     > div {
       gap: 32px;
       > h1 {
-        font-size: 46px;
+        font-size: 40px;
       }
       > span {
         font-size: 16px;
@@ -313,6 +320,7 @@ section {
       }
       > div {
         width: -webkit-fill-available;
+
         .project {
           > .seperator {
             width: auto;
@@ -338,14 +346,13 @@ section {
         flex-direction: column-reverse;
         padding: 0 12px;
         gap: 0;
-
         > .leftSide {
           align-items: unset;
           padding: 0;
           gap: 0;
+
           .numberName {
             padding: 0;
-
             gap: 0;
             > h1 {
               font-size: 56px;
@@ -354,13 +361,16 @@ section {
               font-size: 42px;
             }
           }
+
           .about {
             font-size: 18px;
           }
+
           .description {
             font-size: 16px;
             width: fit-content;
           }
+
           .nextProject {
             padding: 24px 0;
             position: relative;
@@ -369,11 +379,11 @@ section {
           > div {
             gap: 12px;
             padding: 0 0 16px 0;
-
             > .technology_container {
               flex-wrap: wrap;
             }
           }
+
           .buttons {
             padding: 0;
             > a {
@@ -384,6 +394,7 @@ section {
             }
           }
         }
+
         .close {
           padding: 30px 0 40px 0;
           display: flex;
@@ -404,6 +415,7 @@ section {
       }
     }
   }
+
   .soon {
     margin: 16px 0 0 0;
   }
@@ -419,6 +431,7 @@ section {
             left: 112px;
           }
         }
+
         .close {
           left: 332px;
         }
@@ -427,6 +440,7 @@ section {
             width: 350px;
           }
         }
+
         .nextProject {
           left: 100px;
         }
@@ -448,6 +462,7 @@ section {
             padding: 16px 0;
           }
         }
+
         .close {
           left: 278px;
         }

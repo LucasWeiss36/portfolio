@@ -2,15 +2,16 @@
 
 section {
   margin: 144px 0 0 0;
-  @include dFlex($g: 48px);
+  @include dFlex($g: 36px);
   flex-direction: column;
   overflow: hidden;
   > h4 {
     font-size: 32px;
+	margin: 0 0 20px 0;
   }
   > .slide-selection {
     @include dFlex($g: 24px);
-    height: 30vh;
+    height: 20vh;
     position: relative;
     > .testimonial-wrapper {
       position: absolute;
@@ -29,8 +30,8 @@ section {
         font-size: 24px;
         font-family: "Karla";
         text-align: justify;
-        transition: transform 500ms ease-in-out, opacity 25ms ease-in-out,
-          scale 500ms ease-in-out;
+        transition: transform 125ms ease-in-out, opacity 75ms ease-in-out,
+          scale 125ms ease-in-out;
         > div {
           @include dFlex($jc: space-between);
           > .line {
@@ -51,7 +52,9 @@ section {
   }
   > .navigation {
     @include dFlex($g: 24px);
+	margin: 20px 0 0 0;
     > img {
+      cursor: pointer;
       height: 32px;
       width: 32px;
     }
@@ -67,6 +70,7 @@ section {
 .testimonial.active {
   opacity: 1 !important;
 }
+
 .dots span.active {
   color: $primary_color;
 }
@@ -89,6 +93,14 @@ section {
   opacity: 0.7;
 }
 
+@media (max-width: 1024px) {
+  section {
+    > .slide-selection {
+      height: 40vh;
+    }
+  }
+}
+
 @media (max-width: 480px) {
   section {
     margin: 100px 0 0 0;
@@ -108,14 +120,6 @@ section {
           > span {
             font-size: 18px;
           }
-          > div {
-            > .line {
-            }
-            > div {
-              > span {
-              }
-            }
-          }
         }
       }
     }
@@ -123,10 +127,6 @@ section {
       > img {
         height: 32px;
         width: 32px;
-      }
-      > .dots {
-        > span {
-        }
       }
     }
   }

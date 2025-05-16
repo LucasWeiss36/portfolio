@@ -92,7 +92,7 @@
           />
           <label for="checkbox"
             >{{ "contactForm.privacyPolicy.textOne" | translate }}
-            <span class="highlighed">{{
+            <span [routerLink]="['/privacy-policy']" class="highlighed">{{
               "contactForm.privacyPolicy.linkText" | translate
             }}</span>
             {{ "contactForm.privacyPolicy.textTwo" | translate }}</label
@@ -104,11 +104,15 @@
             type="submit"
             value="submit"
             [disabled]="!isChecked"
+			[ngClass]="{'d-none': isSuccess}"
           >
             {{ "contactForm.button" | translate }}
           </button>
         </div>
       </div>
     </form>
+	<div  class="confirmation">
+		<span [ngClass]="{'d-none': !isSuccess}">Email sent</span>
+	</div>
   </div>
 </section>

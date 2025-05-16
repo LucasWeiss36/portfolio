@@ -71,11 +71,11 @@
                   </div>
                 </div>
               </div>
-              <div class="buttons">
+			<div *ngIf="project.githubLink" class="buttons">
                 <a
                   class="button"
                   target="_blank"
-                  href="https://github.com/LucasWeiss36?tab=repositories"
+                  href="{{project.githubLink}}"
                 >
                   Github
                   <img
@@ -83,7 +83,7 @@
                     alt=""
                   />
                 </a>
-                <a class="button" target="_blank">
+                <a class="button" target="_blank" href="{{project.liveLink}}">
                   Live Test
                   <img
                     src="./../../../assets/icons/colored/arrow_outward.svg"
@@ -91,7 +91,7 @@
                   />
                 </a>
               </div>
-              <div class="nextProject" (click)="nextProject()">
+              <div class="nextProject" (click)="clickedIndex !== 2 && nextProject()">
                 <span *ngIf="clickedIndex != 2">Next Project</span>
                 <span *ngIf="clickedIndex == 2" class="button soon"
                   >Coming Soon</span

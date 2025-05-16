@@ -39,7 +39,6 @@ section {
       > div {
         @include dFlex($g: 32px);
         flex-direction: column;
-
         > div {
           @include dFlex($ai: flex-start, $g: 16px);
           flex-direction: column;
@@ -57,41 +56,39 @@ section {
 }
 
 @media (max-width: 1050px) {
-	section {
-		padding: 100px 16px;
-		gap: 36px;
-		> img {
-			width: auto;
-			height: 358px;
-		  }
-	}
-
+  section {
+    padding: 100px 16px;
+    gap: 36px;
+    > img {
+      width: auto;
+      height: 358px;
+    }
+  }
 }
 
-
-@media (max-width: 780px){
-	section {
-		padding: 100px 16px;
-		gap: 0;
-		flex-direction: column;
-		
-		> div {
-		  padding: 0;
-		  > h4 {
-			font-size: 18px;
-		  }
-		  > div {
-			gap: 32px;
-			padding: 27px 32px;
-			> h1 {
-			  font-size: 46px;
-			}
-			> div {
-				span{
-					font-size: 16px;
-				}
-			}
-		  }
-		}
-	  }
+@media (max-width: 780px) {
+  section {
+    padding: 100px 16px;
+    gap: 0;
+    flex-direction: column;
+    > div {
+      padding: 0;
+      > h4 {
+		margin: 16px 0 0 0;
+        font-size: 18px;
+      }
+      > div {
+        gap: 32px;
+        padding: 27px 32px;
+        > h1 {
+          font-size: 46px;
+        }
+        > div {
+          span {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
 }

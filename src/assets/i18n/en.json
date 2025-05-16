@@ -72,17 +72,17 @@
     "headline": "What my colleagues say about me",
     "entries": {
       "first": {
-        "quote": "Lukas has proven to be a reliable group partner. His technical skills and proactive approach were crucial to the success of our project.",
+        "quote": "Lucas has proven to be a reliable group partner. His technical skills and proactive approach were crucial to the success of our project.",
         "author": "H. Janisch",
         "role": "Team Partner"
       },
       "second": {
-        "quote": "I had the good fortune of working with Lukas on a project at the Developer Akademie. His effort, calmness, and dedication ensured our team was set up for success. He is knowledgeable, easy to work with, and I would work with him again given the chance.",
+        "quote": "I had the good fortune of working with Lucas on a project at the Developer Akademie. His effort, calmness, and dedication ensured our team was set up for success. He is knowledgeable, easy to work with, and I would work with him again given the chance.",
         "author": "Anonymous",
         "role": "Colleague"
       },
       "third": {
-        "quote": "I learned so much from Lukas' efficient way of working. He is highly skilled and supportive.",
+        "quote": "I learned so much from Lucas' efficient way of working. He is highly skilled and supportive.",
         "author": "T. Schulz",
         "role": "Frontend Developer"
       }
@@ -112,7 +112,7 @@
       },
       "third": {
         "label": "How can I help you?",
-        "placeholder": "Hello Lukas, I am interested in...",
+        "placeholder": "Hello Lucas, I am interested in...",
         "errorText": "What do you need to develop?"
       }
     },

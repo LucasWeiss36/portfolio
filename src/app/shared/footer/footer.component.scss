@@ -67,6 +67,7 @@ section {
       align-items: center;
       order: 1;
       gap: 16px;
+
       .logo {
         img {
           width: 50px;
@@ -94,10 +95,12 @@ section {
       }
     }
   }
+
   .copyright {
     padding: 8px 0 16px;
     order: 4 !important;
   }
+
   .links {
     padding: 16px 0;
     flex-direction: row !important;

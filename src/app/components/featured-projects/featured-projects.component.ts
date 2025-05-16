@@ -20,6 +20,8 @@ export class FeaturedProjectsComponent {
         { name: 'Firebase', imgSrc: 'assets/icons/colored/firebase.svg' },
       ],
       image: 'join.png',
+	  githubLink: 'https://github.com/LucasWeiss36/join',
+	  liveLink: 'http://join.lucas-weiss.de/',
     },
     {
       name: 'El Pollo Loco',
@@ -29,6 +31,8 @@ export class FeaturedProjectsComponent {
         { name: 'JavaScript', imgSrc: 'assets/icons/colored/javaScript.svg' },
       ],
       image: 'el_pollo_loco.png',
+	  githubLink: 'https://github.com/LucasWeiss36/El-Polo-Loco',
+	  liveLink: 'http://el-pollo-loco.lucas-weiss.de/',
     },
     {
       name: 'DABubble',

@@ -14,7 +14,6 @@ section {
   display: flex;
   flex-direction: column;
   gap: 20px;
-
   > div {
     @include dFlex($jc: space-between, $ai: flex-start, $g: 96px);
     > .skillSet {
@@ -31,7 +30,6 @@ section {
         > div {
           @include dFlex($ai: flex-start, $g: 16px);
           flex-direction: column;
-
           > h2 {
             font-size: 24px;
             font-family: "Fira Code";
@@ -59,7 +57,7 @@ section {
         }
         &:hover {
           transform: scale(1.2);
-          transition: transform 175ms ease-in-out;
+          transition: transform 125ms ease-in-out;
         }
       }
     }
@@ -93,7 +91,7 @@ section {
   text-align: center;
   gap: 8px;
   opacity: 0;
-  transition: opacity 175ms ease-in-out;
+  transition: opacity 125ms ease-in-out;
   pointer-events: none;
   box-shadow: 0px 0px 10px 0px;
   > span {
@@ -124,8 +122,10 @@ section {
 
 @media (max-width: 1050px) {
   section {
-	padding: 56px 16px;
+    padding: 56px 16px;
     > div {
+      gap: 56px;
+
       .technologies {
         grid-template-columns: repeat(3, 1fr);
       }
@@ -136,17 +136,19 @@ section {
 @media (max-width: 780px) {
   section {
     > div {
-		gap: 56px;
-		.technologies {
-			grid-template-columns: repeat(2, 1fr);
-		}
-	}
+      gap: 22px;
+
+      .technologies {
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 32px;
+      }
+    }
   }
 }
 
 @media (max-width: 320px) {
   section {
-    > div {	
+    > div {
       .technologies {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -163,7 +165,7 @@ section {
       gap: 40px;
       flex-direction: column;
       > .skillSet {
-        padding: 24px 32px;
+        padding: 24px 12px;
         gap: 24px;
         h1 {
           font-size: 40px;
@@ -185,7 +187,7 @@ section {
       > .technologies {
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(4, 1fr);
-        grid-column-gap: 16px;
+        grid-column-gap: 8px;
         grid-row-gap: 32px;
         > div {
           > span {

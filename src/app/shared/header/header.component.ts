@@ -16,9 +16,8 @@ export class HeaderComponent {
     public portfolioService: PortfolioService,
     private translate: TranslateService
   ) {
-    let language = this.portfolioService.getLanguageFromSessionStorage();
+    const language = this.portfolioService.getLanguageFromSessionStorage();
     this.translate.setDefaultLang(`${language}`);
-    this.portfolioService.changeLanguage(`${language}`);
   }
   menuIsOpen: boolean = false;
   hideBurgerMenu: boolean = true;
@@ -36,7 +35,7 @@ export class HeaderComponent {
     if (width >= 810) {
       this.menuIsOpen = true;
       this.hideBurgerMenu = true;
-    } else if (width < 810) {
+    } else {
       this.menuIsOpen = false;
       this.hideBurgerMenu = false;
     }

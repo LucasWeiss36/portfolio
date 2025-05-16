@@ -3,17 +3,17 @@ import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [TranslateModule, CommonModule, FormsModule],
+  imports: [TranslateModule, CommonModule, FormsModule, RouterModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
 export class ContactComponent {
-
-	http = inject(HttpClient)
+  http = inject(HttpClient);
 
   contactData = {
     name: '',
@@ -24,9 +24,10 @@ export class ContactComponent {
 
   mailTest = true;
   isChecked = false;
+  isSuccess = false;
 
   post = {
-    endPoint: 'https://deineDomain.de/sendMail.php',
+    endPoint: 'https://lucas-weiss.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -37,26 +38,30 @@ export class ContactComponent {
   };
 
   onSubmit(ngForm: NgForm) {
-    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+    if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
       this.http
         .post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
             ngForm.resetForm();
+			setTimeout(() => {
+				this.isSuccess = false;
+			}, 3000);
           },
           error: (error) => {
             console.error(error);
           },
-          complete: () => console.info('send post complete'),
+          complete: () => {
+            console.info('send post complete');
+            this.isSuccess = true;
+          },
         });
-    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {		
-		console.log(this.contactData);
+    } else if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+	  this.isSuccess = true;
       ngForm.resetForm();
-	  
+	  setTimeout(() => {
+		this.isSuccess = false;
+	}, 3000);
     }
   }
 }
-
-
-
-

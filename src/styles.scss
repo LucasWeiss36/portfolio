@@ -1,4 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
 
 $primary_color: rgba(61, 207, 182, 1);
 $primary_color_50: rgba(61, 207, 182, 0.5);
@@ -13,6 +12,10 @@ $background_color: rgba(28, 28, 28, 1);
   justify-content: $jc;
   align-items: $ai;
   gap: $g;
+}
+
+main {
+  scroll-behavior: smooth;
 }
 
 * {
@@ -61,6 +64,8 @@ input:-webkit-autofill {
 	  border-color: $primary_color;
 	}
   }
+
+  
 
   @media (max-width: 320px){
 	.button{

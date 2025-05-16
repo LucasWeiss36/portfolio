@@ -18,6 +18,8 @@ section {
     display: flex;
     flex-direction: column;
     gap: 40px;
+    z-index: 900;
+
     .headline {
       @include dFlex($jc: center, $ai: center);
       flex-direction: column;
@@ -32,10 +34,15 @@ section {
         color: $white;
       }
     }
+
     .btns {
       @include dFlex($jc: center, $ai: center, $g: 48px);
+      > a {
+        font-family: "Karla";
+      }
     }
   }
+
   .info-left-right {
     position: absolute;
     left: 0;
@@ -44,6 +51,7 @@ section {
     @include dFlex($jc: space-between, $ai: flex-end);
     padding: 0 96px;
   }
+
   .info-left {
     @include dFlex($jc: center, $g: 24px);
     flex-direction: column;
@@ -62,6 +70,7 @@ section {
       background-color: $primary_color;
     }
   }
+
   .info-right {
     @include dFlex($jc: center, $ai: center, $g: 32px);
     flex-direction: column;
@@ -72,9 +81,13 @@ section {
       color: $white;
       letter-spacing: 1px;
     }
+    > .mailto-letters:hover {
+      color: $primary_color;
+    }
     > .mailto-icon {
       display: none;
     }
+
     .icons-right {
       @include dFlex($jc: center, $g: 24px);
       flex-direction: column;
@@ -82,6 +95,12 @@ section {
         width: 1px;
         height: 186px;
         background-color: $white;
+      }
+      .icon {
+        &:hover {
+          transform: scale(1.5);
+          transition: transform 125s ease-in-out;
+        }
       }
     }
   }
@@ -118,6 +137,7 @@ section {
     transform: translateX(-100%);
   }
 }
+
 @keyframes arrowLoop {
   0%,
   100% {
@@ -127,71 +147,68 @@ section {
     transform: translateY(10px);
   }
 }
-@media (max-width:1050px){
-	section {
-		> main {
-			> .headline {
-				
-			}
-		}
-		.info-left-right {
-			padding: 0 16px;
-		}
-	}
-}
-@media (max-width:780px){
-
+@media (max-width: 1050px) {
+  section {
+    .info-left-right {
+      padding: 0 16px;
+    }
+  }
 }
 
-@media (max-width: 480px){
-	section {
-		> .banner {
-		  > div {
-			> span {
-			  font-size: 24px;
-			}
-		  }
-		}
-		> main {
-		  .headline {
-			> h2 {
-			  font-size: 24px;
-			}
-			> h1 {
-			  font-size: 62px;
-			  text-align: center;
-			}
-		  }
-		  .btns {
-			@include dFlex($g: 24px);
-			> a {
-			  font-size: 18px;
-			}
-		  }
-		}
-		.info-left-right {
-		  padding: 0 16px;
-		}
-		.info-left {
-	   
-		  > div {
-			height: 175px;
-		  }
-		}
-		.info-right {
-		  > .mailto-letters {
-			display: none;
-		  }
-		  > .mailto-icon {
-			display: block;
-		  }
-		  .icons-right {
-			@include dFlex($g: 12px);
-			> div {
-			  height: 112px;
-			}
-		  }
-		}
-	
-	  }
+@media (max-width: 480px) {
+  section {
+    > .banner {
+      bottom: 10px;
+      > div {
+        > span {
+          font-size: 24px;
+        }
+      }
+    }
+    > main {
+      .headline {
+        > h2 {
+          font-size: 24px;
+        }
+        > h1 {
+          font-size: 62px;
+          text-align: center;
+        }
+      }
+
+      .btns {
+        @include dFlex($g: 24px);
+        > a {
+          font-size: 16px;
+          padding: 10px 12px;
+        }
+      }
+    }
+
+    .info-left-right {
+      padding: 0 16px;
+    }
+
+    .info-left {
+      > div {
+        height: 126px;
+      }
+    }
+
+    .info-right {
+      > .mailto-letters {
+        display: none;
+      }
+      > .mailto-icon {
+        display: block;
+      }
+
+      .icons-right {
+        @include dFlex($g: 12px);
+        > div {
+          height: 72px;
+        }
+      }
+    }
+  }
 }

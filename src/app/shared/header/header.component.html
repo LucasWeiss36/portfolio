@@ -20,9 +20,9 @@
         DE
       </div>
     </div>
-    <a>{{ "nav.aboutMe" | translate }}</a>
-    <a>{{ "nav.skills" | translate }}</a>
-    <a>{{ "nav.projects" | translate }}</a>
+    <a (click)="toggleBurgerMenu()" href="#aboutMe">{{ "nav.aboutMe" | translate }}</a>
+    <a (click)="toggleBurgerMenu()" href="#skills">{{ "nav.skills" | translate }}</a>
+    <a (click)="toggleBurgerMenu()" href="#projects">{{ "nav.projects" | translate }}</a>
   </nav>
   <img
     [ngClass]="{ dNone: hideBurgerMenu }"
