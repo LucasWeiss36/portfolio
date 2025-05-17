@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
@@ -38,5 +38,25 @@ export class TestimonialsComponent {
 
   goToSlide(index: number) {
     this.currentIndex = index;
+  }
+
+  @ViewChildren('boxElement') boxElements!: QueryList<ElementRef>;
+
+  ngAfterViewInit(): void {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            (entry.target as HTMLElement).classList.add('visible');
+            observer.unobserve(entry.target); // Animation nur einmal pro Element
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    this.boxElements.forEach((el) => {
+      observer.observe(el.nativeElement);
+    });
   }
 }

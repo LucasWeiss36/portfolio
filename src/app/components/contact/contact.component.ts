@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, inject } from '@angular/core';
+import { Component, ElementRef, inject, QueryList, ViewChildren } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { RouterModule } from '@angular/router';
@@ -63,5 +63,24 @@ export class ContactComponent {
 		this.isSuccess = false;
 	}, 3000);
     }
+  }
+  @ViewChildren('boxElement') boxElements!: QueryList<ElementRef>;
+
+  ngAfterViewInit(): void {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            (entry.target as HTMLElement).classList.add('visible');
+            observer.unobserve(entry.target); // Animation nur einmal pro Element
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    this.boxElements.forEach((el) => {
+      observer.observe(el.nativeElement);
+    });
   }
 }

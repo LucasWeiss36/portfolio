@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { PortfolioService } from '../../services/portfolio.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [TranslateModule, CommonModule],
+  imports: [TranslateModule, CommonModule, RouterModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
@@ -31,7 +32,7 @@ export class HeaderComponent {
     this.updateMenu((ev.target as Window).innerWidth);
   }
 
-  private updateMenu(width: number) {
+   updateMenu(width: number) {
     if (width >= 810) {
       this.menuIsOpen = true;
       this.hideBurgerMenu = true;
@@ -49,4 +50,6 @@ export class HeaderComponent {
   toggleBurgerMenu() {
     this.menuIsOpen = !this.menuIsOpen;
   }
+
+  
 }

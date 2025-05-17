@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -9,7 +9,7 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './about-me.component.html',
   styleUrl: './about-me.component.scss',
 })
-export class AboutMeComponent {
+export class AboutMeComponent implements AfterViewInit {
 	imgSrc:string[] = [
 		"assets/icons/colored/location_on.svg",
 		"assets/icons/colored/cognition.svg",
@@ -21,4 +21,24 @@ export class AboutMeComponent {
 		"aboutMe.description.third"
 		
 	]
+
+	@ViewChildren('boxElement') boxElements!: QueryList<ElementRef>;
+
+  ngAfterViewInit(): void {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            (entry.target as HTMLElement).classList.add('visible');
+            observer.unobserve(entry.target); // Animation nur einmal pro Element
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    this.boxElements.forEach((el) => {
+      observer.observe(el.nativeElement);
+    });
+  }
 }
