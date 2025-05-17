@@ -1,10 +1,10 @@
 @import "./../../../styles.scss";
 
 section {
-  @include dFlex($ai: flex-start, $g: 20);
-  padding: 0 0 8px 96px;
+  @include dFlex($ai: flex-start);
+  width: 1920px - 94px * 4;
+  padding: 144px 96px;
   flex-direction: column;
-  margin: 0 0 6px 0;
   > h4 {
     font-family: "Karla";
   }
@@ -20,7 +20,7 @@ section {
     .project {
       cursor: pointer;
       > .seperator {
-        width: 880px;
+        width: 1000px;
         height: 2px;
         background-color: $primary_color;
       }
@@ -54,7 +54,7 @@ section {
 
 .popup {
   position: absolute;
-  transform: translate(250%, -55%);
+  transform: translate(325%, -55%);
   transition: opacity 125ms ease-in-out;
   opacity: 0;
   > img {
@@ -64,7 +64,7 @@ section {
     transition: opacity 125ms ease-in-out;
   }
   &.shift-down {
-    transform: translate(250%, -55%);
+    transform: translate(325%, -55%);
   }
   &::after {
     content: "";
@@ -226,8 +226,26 @@ section {
     }
   }
 }
+
+@media (max-width: 1440px) {
+  section {
+    width: calc(100vw - 96px * 2);
+    > div {
+      .project {
+        > .seperator {
+          width: 925px;
+        }
+      }
+    }
+    .popup {
+      transform: translate(260%, -55%);
+    }
+  }
+}
+
 @media (max-width: 1050px) {
   section {
+	width: calc(100vw - 16px * 2);
     padding: 0 0 8px 16px;
 
     .backdrop {
@@ -252,6 +270,10 @@ section {
         .close {
           top: -300px;
         }
+
+        .popup {
+          display: none;
+        }
       }
     }
   }
@@ -259,6 +281,7 @@ section {
 
 @media (max-width: 780px) {
   section {
+    width: calc(100vw - 16px * 2);
     padding: 0 16px;
     > div {
       width: -webkit-fill-available;
@@ -296,10 +319,6 @@ section {
         }
       }
     }
-  }
-
-  .popup {
-    display: none;
   }
 }
 

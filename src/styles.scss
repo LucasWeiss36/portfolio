@@ -28,6 +28,10 @@ body {
   background-color: $background_color;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 h1 {
   color: $primary_color;
   font-family: "Fira Code";

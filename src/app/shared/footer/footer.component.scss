@@ -1,6 +1,7 @@
 @import "./../../../styles.scss";
 
 section {
+  width: 1920px - 92px * 4;
   @include dFlex($jc: space-between, $ai: flex-end);
   padding: 64px 96px;
   > .info {
@@ -52,14 +53,22 @@ section {
   }
 }
 
+@media (max-width: 1440px) {
+  section {
+    max-width: 1232px;
+  }
+}
+
 @media (max-width: 1050px) {
   section {
+	width:  calc(100vw - 16px * 2);
     padding: 64px 16px 32px;
   }
 }
 
 @media (max-width: 480px) {
   section {
+	width: unset;
     padding: 64px 16px 0;
     flex-direction: column;
     align-items: center;

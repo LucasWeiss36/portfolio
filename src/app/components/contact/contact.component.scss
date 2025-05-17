@@ -1,7 +1,8 @@
 @import "./../../../styles.scss";
 
 section {
-	overflow: hidden;
+  width: 1920px - 94px * 4;
+  overflow: hidden;
   @include dFlex($jc: space-between, $ai: flex-start, $g: 64px);
   padding: 144px 96px;
   > .left {
@@ -103,30 +104,29 @@ section {
     }
   }
   .confirmation {
-	@include dFlex();
-	span {
-	  font-family: "Karla";
-	  font-size: 24px;
-	  color: $primary_color;
-	  border: 2px solid $primary_color;
-	  padding: 10px 16px;
-	  margin: 16px 0 0 0;
-	  border-radius: 24px;
-	  background-color: $background_color;
-	  transform: translateX(150%);
-	  animation: slideInCenter 0.8s ease-out forwards;
-	}
+    @include dFlex();
+    span {
+      font-family: "Karla";
+      font-size: 24px;
+      color: $primary_color;
+      border: 2px solid $primary_color;
+      padding: 10px 16px;
+      margin: 16px 0 0 0;
+      border-radius: 24px;
+      background-color: $background_color;
+      transform: translateX(150%);
+      animation: slideInCenter 0.8s ease-out forwards;
+    }
   }
-  
-  
+
   @keyframes slideInCenter {
-	  to {
-		transform: translateX(0);
-	  }
-	}
-  
-  .d-none{
-	display: none;
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  .d-none {
+    display: none;
   }
 }
 
@@ -141,8 +141,15 @@ section {
   background-color: $primary_color;
 }
 
+@media (max-width: 1440px) {
+  section {
+    max-width: 1232px;
+  }
+}
+
 @media (max-width: 1175px) {
   section {
+	width: unset;
     padding: 144px 16px;
     .seperator {
       width: unset;
@@ -240,7 +247,6 @@ section {
     background-color: $primary_color;
   }
 }
-
 
 @media (max-width: 480px) {
   section {

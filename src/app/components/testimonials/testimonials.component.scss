@@ -1,23 +1,20 @@
 @import "./../../../styles.scss";
 
 section {
+  width: 1920px;
+  height: 500px;
   margin: 144px 0 0 0;
-  @include dFlex($g: 36px);
-  flex-direction: column;
+  position: relative;
   overflow: hidden;
+  @include dFlex($jc: space-between);
+  flex-direction: column;
   > h4 {
     font-size: 32px;
-	margin: 0 0 20px 0;
   }
   > .slide-selection {
-    @include dFlex($g: 24px);
-    height: 20vh;
-    position: relative;
+    @include dFlex();
     > .testimonial-wrapper {
       position: absolute;
-      width: 640px;
-      height: 275px;
-      @include dFlex();
       > .testimonial {
         @include dFlex($jc: space-between, $ai: unset);
         flex-direction: column;
@@ -25,11 +22,10 @@ section {
         border-radius: 32px;
         padding: 40px;
         background-color: #29554d;
-        width: 640px;
         height: 275px;
+        width: 460px;
         font-size: 24px;
         font-family: "Karla";
-        text-align: justify;
         transition: transform 125ms ease-in-out, opacity 75ms ease-in-out,
           scale 125ms ease-in-out;
         > div {
@@ -52,7 +48,6 @@ section {
   }
   > .navigation {
     @include dFlex($g: 24px);
-	margin: 20px 0 0 0;
     > img {
       cursor: pointer;
       height: 32px;
@@ -93,10 +88,37 @@ section {
   opacity: 0.7;
 }
 
+@media (max-width: 1440px) {
+  section {
+    max-width: 1440px;
+  }
+}
+
 @media (max-width: 1024px) {
   section {
+    width: 100vw;
     > .slide-selection {
-      height: 40vh;
+      > .testimonial-wrapper {
+        > .testimonial {
+          width: 300px;
+          font-size: 22px;
+          padding: 32px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 810px) {
+  section {
+    > .slide-selection {
+      > .testimonial-wrapper {
+        > .testimonial {
+          width: 240px;
+          font-size: 18px;
+          padding: 22px;
+        }
+      }
     }
   }
 }
@@ -105,17 +127,13 @@ section {
   section {
     margin: 100px 0 0 0;
     gap: unset;
-    height: 75vh;
     > h4 {
       text-align: center;
       padding: 0 16px;
       font-size: 24px;
     }
     > .slide-selection {
-      height: 100vh;
       > .testimonial-wrapper {
-        width: 304px;
-        height: 360px;
         > .testimonial {
           > span {
             font-size: 18px;
@@ -130,4 +148,5 @@ section {
       }
     }
   }
+ 
 }

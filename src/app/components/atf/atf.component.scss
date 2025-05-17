@@ -1,19 +1,17 @@
 @import "./../../../styles.scss";
 section {
+	width: 1920px;
   background-image: linear-gradient(
     225deg,
-    #08463b,
-    rgb(8, 70, 59),
-    $background_color,
-    $background_color,
-    $background_color
+    #08463b 0%,
+ 
+    $background_color 42.5%,
+	$background_color 75%,
+	$background_color 100%
   );
-
   height: 100vh;
-  width: 100%;
   color: $white;
   @include dFlex($jc: center);
-
   > main {
     display: flex;
     flex-direction: column;
@@ -44,10 +42,12 @@ section {
   }
 
   .info-left-right {
+	width: 1920px - 94px * 2;
     position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    left: 50%;
+    right: 50%;
+	transform: translate(-50%, -50%);
+    bottom: -284px;
     @include dFlex($jc: space-between, $ai: flex-end);
     padding: 0 96px;
   }
@@ -106,10 +106,13 @@ section {
   }
 
   .banner {
+	max-width: 1920px;
     z-index: 10;
     position: absolute;
-    bottom: 45px;
-    right: 1px;
+    bottom: 90px;
+    left: 50%;
+	right: 50%;
+	transform: translate(-50%, -50%);
     padding: 12px 0;
     background-color: rgba(255, 255, 255, 0.12);
     overflow: hidden;
@@ -147,11 +150,27 @@ section {
     transform: translateY(10px);
   }
 }
-@media (max-width: 1050px) {
+
+@media (max-width: 1440px) {
   section {
-    .info-left-right {
-      padding: 0 16px;
-    }
+	width: 100vw;
+   
+	.info-left-right{
+		width: calc(100% - 96px * 2);
+	}
+	.banner{
+		bottom: 2%;
+		width: 100vw ;
+	}
+  }
+}
+
+@media (max-width: 810px) {
+  section {
+	.info-left-right{
+		width: calc(100% - 16px * 2);
+		padding: 0 16px;
+	}
   }
 }
 
@@ -187,6 +206,7 @@ section {
 
     .info-left-right {
       padding: 0 16px;
+	  bottom: -108px;
     }
 
     .info-left {
@@ -210,5 +230,8 @@ section {
         }
       }
     }
+	.banner{
+		bottom: 0	;
+	}
   }
 }

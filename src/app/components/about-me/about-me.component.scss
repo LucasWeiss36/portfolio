@@ -1,7 +1,8 @@
 @import "./../../../styles.scss";
 
 section {
-  padding: 140px 95px 144px 112px;
+	max-width: 1920px - 94px * 2;
+  padding: 140px 94px 144px;
   @include dFlex($jc: unset, $ai: unset, $g: 96px);
   font-family: "Karla";
   font-size: 18px;
@@ -55,6 +56,8 @@ section {
   }
 }
 
+
+
 @media (max-width: 1050px) {
   section {
     padding: 100px 16px;
@@ -91,4 +94,12 @@ section {
       }
     }
   }
+}
+
+@media (max-width: 410px) {
+	section{
+		>img{
+			height: 280px;
+		}
+	}
 }

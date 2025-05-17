@@ -1,9 +1,10 @@
 @import "./../../../../styles.scss";
 
 section {
+	max-width: 1920px - 94px * 4 + 16px;
 	@include dFlex($ai: flex-start, $g: 4px);
 	flex-direction: column;
-	padding: 0 16px;
+	padding: 32px 16px;
   h1,
   h2,
   h3 {
@@ -19,6 +20,11 @@ section {
 
   p {
     font-family: "Karla";
+  }
+
+  li{
+	list-style-type: none;
+	margin: 0 0 6px 0;
   }
 }
 

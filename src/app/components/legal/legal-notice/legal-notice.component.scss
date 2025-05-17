@@ -3,7 +3,7 @@
 section {
 	@include dFlex($ai: flex-start, $g: 4px);
 	flex-direction: column;
-	padding: 0 16px;
+	padding: 32px 16px;
   h1,
   h2{
     color: $primary_color;
