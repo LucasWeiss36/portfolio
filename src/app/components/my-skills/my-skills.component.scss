@@ -1,11 +1,11 @@
 @import "./../../../styles.scss";
 
 section {
-	max-width: 1920px - 94px * 4;
+  width: 100vw;
   background: radial-gradient(
     circle at left,
-	rgba(61, 207, 182, 0.15) 0%,
-	transparent 17.5%
+    rgba(61, 207, 182, 0.15) 0%,
+    transparent 17.5%
   );
   font-family: "Karla";
   font-size: 18px;
@@ -13,6 +13,7 @@ section {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  align-items: center;
   > div {
     @include dFlex($jc: space-between, $ai: flex-start, $g: 96px);
     > .skillSet {
@@ -127,6 +128,7 @@ section {
 @media (max-width: 1050px) {
   section {
     padding: 56px 16px;
+	width: unset;
     > div {
       gap: 56px;
 

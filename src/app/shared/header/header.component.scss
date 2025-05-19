@@ -1,6 +1,6 @@
 @import "./../../../styles.scss";
 header {
-  width: calc(1920px - 96px * 2);
+	width: calc(100vw - 96px * 2);
   color: $white;
   @include dFlex($jc: space-between);
   position: absolute;

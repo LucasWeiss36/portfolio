@@ -108,7 +108,8 @@
       "second": {
         "label": "What's your email?",
         "placeholder": "youremail@email.com",
-        "errorText": "Oops! your email is required"
+        "errorText": "Oops! your email is required",
+		"invalid": "Please enter a valid email address, e.g. example@example.de."
       },
       "third": {
         "label": "How can I help you?",

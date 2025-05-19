@@ -30,7 +30,7 @@ export class AboutMeComponent implements AfterViewInit {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             (entry.target as HTMLElement).classList.add('visible');
-            observer.unobserve(entry.target); // Animation nur einmal pro Element
+            // observer.unobserve(entry.target); // Animation nur einmal pro Element
           }
         });
       },

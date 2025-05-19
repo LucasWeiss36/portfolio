@@ -1,4 +1,10 @@
-import { Component } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  QueryList,
+  ViewChildren,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './shared/header/header.component';
@@ -21,15 +27,33 @@ import { FooterComponent } from './shared/footer/footer.component';
     AboutMeComponent,
     MySkillsComponent,
     FeaturedProjectsComponent,
-	TestimonialsComponent,
-	ContactComponent,
-	FooterComponent
+    TestimonialsComponent,
+    ContactComponent,
+    FooterComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
   title = 'portfolio';
 
+  @ViewChildren('boxElement') boxElements!: QueryList<ElementRef>;
 
+  ngAfterViewInit(): void {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            (entry.target as HTMLElement).classList.add('visible');
+            //   observer.unobserve(entry.target); // Animation nur einmal pro Element
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    this.boxElements.forEach((el) => {
+      observer.observe(el.nativeElement);
+    });
+  }
 }

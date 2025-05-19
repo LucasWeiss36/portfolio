@@ -110,7 +110,8 @@
       "second": {
         "label": "Wie lautet Ihre E-Mail-Adresse?",
         "placeholder": "youremail@email.com",
-        "errorText": "Hoppla! Ihre E-Mail-Adresse wird benötigt."
+        "errorText": "Hoppla! Ihre E-Mail-Adresse wird benötigt.",
+		"invalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein, z. B. beispiel@beispiel.de."
       },
       "third": {
         "label": "Wie kann ich Ihnen helfen?",

@@ -33,16 +33,7 @@ export class FeaturedProjectsComponent {
       image: 'el_pollo_loco.png',
 	  githubLink: 'https://github.com/LucasWeiss36/El-Polo-Loco',
 	  liveLink: 'http://el-pollo-loco.lucas-weiss.de/',
-    },
-    {
-      name: 'DABubble',
-      technologies: [
-        { name: 'Angular', imgSrc: 'assets/icons/colored/angular.svg' },
-        { name: 'Firebase', imgSrc: 'assets/icons/colored/firebase.svg' },
-        { name: 'TypeScript', imgSrc: 'assets/icons/colored/typeScript.svg' },
-      ],
-      image: 'DA_bubble.png',
-    },
+    }
   ];
 
   clickedIndex: number | null = null;

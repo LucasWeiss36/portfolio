@@ -1,6 +1,6 @@
 @import "./../../../styles.scss";
 section {
-	width: 1920px;
+	width: 100vw;
   background-image: linear-gradient(
     225deg,
     #08463b 0%,
@@ -106,7 +106,7 @@ section {
   }
 
   .banner {
-	max-width: 1920px;
+	max-width: 100vw;
     z-index: 10;
     position: absolute;
     bottom: 90px;
