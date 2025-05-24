@@ -1,6 +1,7 @@
 @import "./../../../styles.scss";
 header {
-  width: calc(1920px - 96px * 2);
+	width: calc(100% - 96px * 2);
+  max-width: calc(1920px - 96px * 2);
   color: $white;
   @include dFlex($jc: space-between);
   position: absolute;
@@ -65,11 +66,6 @@ header {
   display: none !important;
 }
 
-@media (max-width: 1440px){
-	header{
-		width: calc(100% - 96px * 2);
-	}
-}
 
 @media (max-width: 810px) {
 	header {

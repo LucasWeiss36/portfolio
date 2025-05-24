@@ -10,6 +10,9 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './featured-projects.component.scss',
 })
 export class FeaturedProjectsComponent {
+	static hideClickedProject() {
+		throw new Error('Method not implemented.');
+	}
   projects = [
     {
       name: 'Join',
@@ -40,25 +43,32 @@ export class FeaturedProjectsComponent {
   hoveredIndex: number | null = null;
 
   showHoveredProject(index: number) {
-    this.hoveredIndex = index;
+	if(window.innerWidth > 1024) {
+		this.hoveredIndex = index;
+	}
+    // this.hoveredIndex = index;
   }
 
   hideHoveredProject() {
     this.hoveredIndex = null;
   }
-  showClickedProject(index: number): void {
+  showClickedProject(index: number): void {	
     this.clickedIndex = index;
     document.body.style.overflow = 'hidden';
+	const el = document.getElementById('projects');
+	el?.scrollIntoView({block: 'center', inline: 'start', behavior: 'smooth' });
+
+	
   }
 
-  hideClickedProject(): void {
+   public hideClickedProject(): void {
     this.clickedIndex = null;
     document.body.style.overflow = '';
   }
 
   nextProject() {
     if (this.clickedIndex != null) {
-      this.clickedIndex++;
+      this.clickedIndex = (this.clickedIndex + 1) % this.projects.length;
     }
   }
 

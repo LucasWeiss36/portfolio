@@ -1,11 +1,11 @@
 <section #boxElement class="box" id="aboutMe">
-  <img src="./../../assets/img/aboutMeExample.svg" alt="" />
+  <img src="./../../assets/img/pb.jpg" alt="" />
   <div>
-    <h4>{{ "aboutMe.headline" | translate }}</h4>
+    <h4 >{{ "aboutMe.headline" | translate }}</h4>
     <div>
-      <h1>{{ "aboutMe.subline" | translate }}</h1>
+      <h1 >{{ "aboutMe.subline" | translate }}</h1>
       <div>
-        <span>{{ "aboutMe.greeting" | translate }}</span>
+        <span >{{ "aboutMe.greeting" | translate }}</span>
         <div>
           <div *ngFor="let src of imgSrc; let i = index" class="img-text">
             <img [src]="src" alt="" />

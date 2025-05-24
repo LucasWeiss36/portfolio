@@ -18,7 +18,8 @@ export class HeaderComponent {
     private translate: TranslateService
   ) {
     const language = this.portfolioService.getLanguageFromSessionStorage();
-    this.translate.setDefaultLang(`${language}`);
+    this.translate.setDefaultLang(language);
+    this.translate.use(language);
   }
   menuIsOpen: boolean = false;
   hideBurgerMenu: boolean = true;
@@ -32,7 +33,7 @@ export class HeaderComponent {
     this.updateMenu((ev.target as Window).innerWidth);
   }
 
-   updateMenu(width: number) {
+  updateMenu(width: number) {
     if (width >= 810) {
       this.menuIsOpen = true;
       this.hideBurgerMenu = true;
@@ -50,6 +51,4 @@ export class HeaderComponent {
   toggleBurgerMenu() {
     this.menuIsOpen = !this.menuIsOpen;
   }
-
-  
 }

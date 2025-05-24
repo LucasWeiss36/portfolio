@@ -1,19 +1,14 @@
 @import "./../../../styles.scss";
 
 section {
-  width: 100vw;
-  background: radial-gradient(
-    circle at left,
-    rgba(61, 207, 182, 0.15) 0%,
-    transparent 17.5%
-  );
+  width: 100%;
+  max-width: calc(1920px - 96px * 2);
   font-family: "Karla";
   font-size: 18px;
   padding: 144px 96px;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  align-items: center;
   > div {
     @include dFlex($jc: space-between, $ai: flex-start, $g: 96px);
     > .skillSet {
@@ -122,13 +117,7 @@ section {
 
 @media (max-width: 1440px) {
   section {
-    max-width: 1440px - 94px * 2;
-  }
-}
-@media (max-width: 1050px) {
-  section {
-    padding: 56px 16px;
-	width: unset;
+    max-width: 1440px - 96px * 2;
     > div {
       gap: 56px;
 
@@ -138,9 +127,9 @@ section {
     }
   }
 }
-
-@media (max-width: 780px) {
+@media (max-width: 1080px) {
   section {
+    width: unset;
     > div {
       gap: 22px;
 
@@ -152,15 +141,41 @@ section {
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 980px) {
   section {
-    > div {
-      .technologies {
-        grid-template-columns: repeat(2, 1fr);
+    padding: 100px 16px;
+  }
+}
+
+@media (max-width: 780px) {
+  section {
+	  > div {
+		align-items: center;
+      flex-direction: column;
+      > .technologies {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-column-gap: 8px;
+        grid-row-gap: 32px;
+        > div {
+          > span {
+            font-size: 16px;
+          }
+        }
       }
     }
   }
 }
+
+// @media (max-width: 320px) {
+//   section {
+//     > div {
+//       .technologies {
+//         grid-template-columns: repeat(2, 1fr);
+//       }
+//     }
+//   }
+// }
 @media (max-width: 480px) {
   section {
     padding: 0 16px 100px;
@@ -187,17 +202,6 @@ section {
                 font-size: 20px;
               }
             }
-          }
-        }
-      }
-      > .technologies {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(4, 1fr);
-        grid-column-gap: 8px;
-        grid-row-gap: 32px;
-        > div {
-          > span {
-            font-size: 16px;
           }
         }
       }

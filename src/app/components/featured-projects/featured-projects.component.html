@@ -1,8 +1,8 @@
 <section #boxElement class="box" id="projects">
-  <h4>{{ "portfolio.headline" | translate }}</h4>
+  <h4 >{{ "portfolio.headline" | translate }}</h4>
   <div>
-    <h1>{{ "portfolio.subline" | translate }}</h1>
-    <span class="description">{{ "portfolio.description" | translate }}</span>
+    <h1 >{{ "portfolio.subline" | translate }}</h1>
+    <span class="description" >{{ "portfolio.description" | translate }}</span>
     <div>
       <div class="project" *ngFor="let project of projects; let i = index">
         <div class="seperator" *ngIf="i == 0"></div>
@@ -51,11 +51,11 @@
                 <h4>{{ project.name }}</h4>
               </div>
               <div class="info">
-                <span class="about">{{
+                <span class="about" >{{
                   "portfolio.projects.about" | translate
                 }}</span>
-                <span class="description">{{
-                  "portfolio.projects.join.description" | translate
+                <span class="description" >{{
+                  "portfolio.projects." + project.name.toLowerCase().replaceAll(" ", "") + ".description" | translate
                 }}</span>
                 <div class="technology_container">
                   <div
@@ -91,13 +91,10 @@
                   />
                 </a>
               </div>
-              <div class="nextProject" (click)="clickedIndex !== 2 && nextProject()">
-                <span *ngIf="clickedIndex != 2">Next Project</span>
-                <span *ngIf="clickedIndex == 2" class="button soon"
-                  >Coming Soon</span
-                >
+              <div class="nextProject" (click)="nextProject()">
+                <span>Next Project</span>
+                
                 <img
-                  *ngIf="clickedIndex != 2"
                   src="./../../../assets/icons/colored/arrow_forward.svg"
                   alt="nextProject"
                 />

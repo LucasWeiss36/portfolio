@@ -1,6 +1,6 @@
 @import "./../../../styles.scss";
 section {
-	width: 100vw;
+	width: 100%;
   background-image: linear-gradient(
     225deg,
     #08463b 0%,
@@ -30,6 +30,7 @@ section {
         font-size: 128px;
         font-family: "Karla";
         color: $white;
+		text-align: center;
       }
     }
 
@@ -42,7 +43,8 @@ section {
   }
 
   .info-left-right {
-	width: 1920px - 94px * 2;
+	width: calc(100% - 96px * 2);
+	max-width: calc(1920px - 96px * 2);
     position: absolute;
     left: 50%;
     right: 50%;
@@ -80,6 +82,7 @@ section {
       text-decoration: none;
       color: $white;
       letter-spacing: 1px;
+	  font-family: "Karla";
     }
     > .mailto-letters:hover {
       color: $primary_color;
@@ -106,10 +109,10 @@ section {
   }
 
   .banner {
-	max-width: 100vw;
+    width: 100%;
     z-index: 10;
     position: absolute;
-    bottom: 90px;
+    bottom: 148px;
     left: 50%;
 	right: 50%;
 	transform: translate(-50%, -50%);
@@ -119,14 +122,14 @@ section {
     white-space: nowrap;
     backdrop-filter: blur(3px);
     @include dFlex($ai: center, $g: 56px);
-    rotate: -3deg;
-    width: 101vw;
+    rotate: -2deg;
     > div {
       animation: bannerLoop 40s infinite linear;
       @include dFlex($jc: center, $ai: center, $g: 56px);
       > span {
         color: $primary_color;
         font-size: 32px;
+		font-family: "Karla";	
       }
     }
   }
@@ -151,26 +154,45 @@ section {
   }
 }
 
+@media (max-width: 2660px) {
+	section{
+		.banner{
+			bottom: 80px;
+		}
+	}
+}
+
 @media (max-width: 1440px) {
-  section {
-	width: 100vw;
-   
+  section {   
 	.info-left-right{
-		width: calc(100% - 96px * 2);
+		max-width: calc(100% - 96px * 2);
 	}
 	.banner{
-		bottom: 2%;
-		width: 100vw ;
+		bottom: 4%;
 	}
   }
 }
 
-@media (max-width: 810px) {
+
+@media (max-width: 980px) {
   section {
-	.info-left-right{
-		width: calc(100% - 16px * 2);
-		padding: 0 16px;
-	}
+	>main{
+		.headline {
+			> h2 {
+			  font-size: 32px;
+			}
+			> h1 {
+			  font-size: 86px;
+			  text-align: center;
+			}
+		  }
+
+		}
+		.info-left-right{
+			width: 100%;
+			max-width: calc(100% - 16px * 2);
+			padding: 0 16px;
+		}
   }
 }
 

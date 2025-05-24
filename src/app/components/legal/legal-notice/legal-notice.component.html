@@ -1,19 +1,27 @@
 <section>
-	<img [routerLink]="['/']" src="./../../../../assets/icons/close_small.svg" alt="close" class="close-icon">
-  <h1>Impressum</h1>
+  <div>
+    <div class="button" [routerLink]="['/']">
+      <img
+        src="./../../../../assets/icons/arrow.svg"
+        alt="close"
+        class="close-icon"
+      />
+      <span >{{"back.text" | translate}}</span>
+    </div>
+    <div  class="content">
+      <h1 >{{"legalNotice.headline" | translate}}</h1>
 
-  <p>
-    Lucas Wei&szlig;<br />
-    Zehentgasse 5<br />
-    5<br />
-    74177 Bad Friedrichshall
-  </p>
+      <p>
+        Lucas Weiß<br />
+        Zehentgasse 5<br />
+        5<br />
+        74177 Bad Friedrichshall
+      </p>
 
-  <h2>Kontakt</h2>
-  <p>
-    Telefon: 017670429917<br />
-    E-Mail: contact&#64;lucas-weiss.de
-  </p>
+      <h2 >{{"legalNotice.contact" | translate}}</h2>
+      <p>E-Mail: contact&#64;lucas-weiss.de</p>
 
-  <p>Quelle: <a href="https://www.e-recht24.de">eRecht24</a></p>
+      <p >{{"legalNotice.source" | translate}}: <a href="https://www.e-recht24.de">eRecht24</a></p>
+    </div>
+  </div>
 </section>

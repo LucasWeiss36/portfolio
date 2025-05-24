@@ -1,12 +1,100 @@
-main{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	>app-header{
-		background: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75));
-		width: 100vw;
-		height: 100px;
-		position: absolute;
-	}
-}
+@import './../../styles.scss';
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
+  > app-header {
+	z-index: 10;
+    overflow: hidden;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75));
+    width: 100vw;
+    height: 100px;
+    position: absolute;
+  }
+
+  > app-atf {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  > app-about-me {
+	width: 100%;
+	z-index: 10;
+    display: flex;
+    justify-content: center;
+  }
+
+  > app-my-skills {
+	z-index: 10;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: radial-gradient(
+      circle at left,
+      rgba(61, 207, 182, 0.15) 0%,
+      transparent 17.5%
+    );
+  }
+
+  > app-featured-projects {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  > app-testimonials {
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  > app-contact {
+	z-index: 10;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .arrow-down-container {
+
+	max-width: calc(1920px - 96px * 2);
+	padding:  96px 0 0 0;
+	cursor: pointer;
+	>div{
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		border: 1px solid $white;
+		padding: 12px 20px;
+		border-radius: 50px;
+		&:hover{
+			border-color: $primary-color;
+			span{
+				color: $primary-color;
+			}
+		}
+	}
+
+    .arrow-down {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+      rotate: 180deg;
+    }
+
+    span {
+      font-size: 16px;
+      font-weight: 600;
+    }
+	
+  }
+
+  @media (max-width: 1440px) {
+    .arrow-down-container {
+		max-width: 1329px;
+    }
+  }
+}

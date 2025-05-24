@@ -1,14 +1,17 @@
 @import "./../../../styles.scss";
 
 section {
-	max-width: 1920px - 94px * 2;
-  padding: 140px 94px 144px;
+  width: 100%;
+  max-width: calc(1920px - 96px * 2);
+  padding: 140px 96px 144px;
   @include dFlex($jc: unset, $ai: unset, $g: 96px);
   font-family: "Karla";
   font-size: 18px;
   > img {
-    width: 568px;
-    height: 568px;
+    width: 601px;
+    height: fit-content;
+	// object-fit: contain;
+	border-radius: 30px;
   }
   > div {
     padding: 100px 0 0 0;
@@ -56,28 +59,35 @@ section {
   }
 }
 
-
-
-@media (max-width: 1050px) {
+@media (max-width: 1370px) {
   section {
-    padding: 100px 16px;
     gap: 36px;
     > img {
       width: auto;
-      height: 358px;
+      max-height: 458px;
+    }
+  }
+}
+@media (max-width: 1130px) {
+  section {
+    > img {
+      width: auto;
+      max-height: 358px;
     }
   }
 }
 
-@media (max-width: 780px) {
+
+@media (max-width: 980px) {
   section {
     padding: 100px 16px;
     gap: 0;
     flex-direction: column;
+	align-items: center;
     > div {
       padding: 0;
       > h4 {
-		margin: 16px 0 0 0;
+        margin: 16px 0 0 0;
         font-size: 18px;
       }
       > div {
@@ -97,9 +107,9 @@ section {
 }
 
 @media (max-width: 410px) {
-	section{
-		>img{
-			height: 280px;
-		}
-	}
+  section {
+    > img {
+      height: 280px;
+    }
+  }
 }

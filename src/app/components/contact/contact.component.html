@@ -1,120 +1,55 @@
 <section #boxElement class="box" id="contact">
   <div class="left">
     <div class="head">
-      <h4>{{ "contactForm.headline" | translate }}</h4>
-      <h1>{{ "contactForm.subline" | translate }}</h1>
+      <h4>{{ 'contact.subtitle' | translate }}</h4>
+      <h1>{{ 'contact.title' | translate }}</h1>
     </div>
     <div class="problemToSolve">
-      <h2>{{ "contactForm.problemToSolve.headline" | translate }}</h2>
-      <span>{{ "contactForm.problemToSolve.description" | translate }}</span>
       <div>
-        <span>{{ "contactForm.problemToSolve.cta.text" | translate }}</span>
-        <span class="highlighed">{{
-          "contactForm.problemToSolve.cta.highlightedText" | translate
-        }}</span>
+        <span>{{ 'contact.description' | translate }}</span>
       </div>
+      <h2>{{ 'contact.letsTalk' | translate }}</h2>
     </div>
   </div>
   <div class="form-and-confirmation">
-    <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" [attr.novalidate]="false">
-      <div class="seperator"></div>
+    <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
       <div class="dialog">
-        <label for="name">{{
-          "contactForm.fields.first.label" | translate
-        }}</label>
-        <input
-          autocomplete="false"
-          type="text"
-          name="name"
-          id="name"
-          #name="ngModel"
+        <label for="email">{{ 'contact.email' | translate }}</label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          [(ngModel)]="email" 
+          (ngModelChange)="onEmailChange()"
+          [class.invalid]="!isEmailValid && email.length > 0"
+          placeholder="{{ 'contact.emailPlaceholder' | translate }}"
           required
-          [(ngModel)]="contactData.name"
-          [ngClass]="{ invalid: name.invalid && name.touched }"
-          [placeholder]="
-            name.invalid && name.touched
-              ? ('contactForm.fields.first.errorText' | translate)
-              : ('contactForm.fields.first.placeholder' | translate)
-          "
-        />
-		
+        >
+        <span class="error-message" *ngIf="!isEmailValid && email.length > 0">
+          {{ 'contact.invalidEmail' | translate }}
+        </span>
       </div>
-      <div class="seperator"></div>
+
       <div class="dialog">
-        <label for="email">{{
-          "contactForm.fields.second.label" | translate
-        }}</label>
-        <input
-          autocomplete="false"
-          pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
-          type="email"
-		  id="email"
-          name="email"
-          #email="ngModel"
+        <label for="message">{{ 'contact.message' | translate }}</label>
+        <textarea 
+          id="message" 
+          name="message" 
+          [(ngModel)]="message"
+          placeholder="{{ 'contact.messagePlaceholder' | translate }}"
           required
-          [(ngModel)]="contactData.email"
-          [ngClass]="{ invalid: email.invalid && email.touched }"
-          [placeholder]="
-            email.invalid && email.touched
-              ? ('contactForm.fields.second.errorText' | translate)
-              : ('contactForm.fields.second.placeholder' | translate)
-          "
-        />
-		<span *ngIf="email.invalid && email.touched" class="invalid">{{"contactForm.fields.second.invalid" | translate}}</span>
+        ></textarea>
       </div>
-      <div class="seperator"></div>
-      <div class="dialog">
-        <label for="message">{{
-          "contactForm.fields.third.label" | translate
-        }}</label>
-        <input
-          type="text"
-          name="message"
-		  id="message"
-          #message="ngModel"
-          required
-          [(ngModel)]="contactData.message"
-          [ngClass]="{ invalid: message.invalid && message.touched }"
-          [placeholder]="
-            message.invalid && message.touched
-              ? ('contactForm.fields.third.errorText' | translate)
-              : ('contactForm.fields.third.placeholder' | translate)
-          "
-        />
-      </div>
-      <div class="seperator"></div>
 
       <div class="send">
-        <div class="check">
-          <input
-            type="checkbox"
-            name="checkbox"
-            id="checkbox"
-            [(ngModel)]="isChecked"
-          />
-          <label for="checkbox"
-            >{{ "contactForm.privacyPolicy.textOne" | translate }}
-            <span [routerLink]="['/privacy-policy']" class="highlighed">{{
-              "contactForm.privacyPolicy.linkText" | translate
-            }}</span>
-            {{ "contactForm.privacyPolicy.textTwo" | translate }}</label
-          >
-        </div>
-        <div class="btn-container">
-          <button
-            class="button"
-            type="submit"
-            value="submit"
-            [disabled]="!isChecked"
-			[ngClass]="{'d-none': isSuccess}"
-          >
-            {{ "contactForm.button" | translate }}
-          </button>
-        </div>
+        <button type="submit" [disabled]="!isEmailValid || message.trim().length === 0">
+          {{ 'contact.send' | translate }}
+        </button>
       </div>
     </form>
-	<div  class="confirmation">
-		<span [ngClass]="{'d-none': !isSuccess}">Email sent</span>
-	</div>
+
+    <div class="success-message" *ngIf="isFormSubmitted">
+      {{ 'contact.successMessage' | translate }}
+    </div>
   </div>
 </section>

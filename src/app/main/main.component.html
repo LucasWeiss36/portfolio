@@ -1,11 +1,14 @@
 <main>
-	<app-header></app-header>
-	<app-atf></app-atf>
-	<app-about-me></app-about-me>
-	<app-my-skills></app-my-skills>
-	<app-featured-projects></app-featured-projects>
-	<app-testimonials></app-testimonials>
-	<app-contact></app-contact>
-	<app-footer></app-footer>
-  </main>
-  
+  <app-atf></app-atf>
+  <app-about-me></app-about-me>
+  <app-my-skills></app-my-skills>
+  <app-featured-projects></app-featured-projects>
+  <app-testimonials></app-testimonials>
+  <app-contact></app-contact>
+  <div class="arrow-down-container" (click)="scrollToTop()">
+	<div>
+		<img src="./../../../assets/icons/arrow-down.svg" alt="arrow-down" class="arrow-down">
+		<span>{{ 'scrollToTop.text' | translate }}</span>
+	</div>
+	</div>
+</main>

@@ -1,6 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, ElementRef, inject, QueryList, ViewChildren } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  inject,
+  QueryList,
+  ViewChildren,
+} from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { RouterModule } from '@angular/router';
@@ -22,7 +28,7 @@ export class ContactComponent {
   };
   binding: any;
 
-  mailTest = true;
+  mailTest = false;
   isChecked = false;
   isSuccess = false;
 
@@ -37,31 +43,27 @@ export class ContactComponent {
     },
   };
 
+  email: string = '';
+  message: string = '';
+  isEmailValid: boolean = true;
+  isFormSubmitted: boolean = false;
+
+  validateEmail(email: string): boolean {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailRegex.test(email);
+  }
+
+  onEmailChange() {
+    this.isEmailValid = this.validateEmail(this.email);
+  }
+
   onSubmit(ngForm: NgForm) {
-    if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-      this.http
-        .post(this.post.endPoint, this.post.body(this.contactData))
-        .subscribe({
-          next: (response) => {
-            ngForm.resetForm();
-			setTimeout(() => {
-				this.isSuccess = false;
-			}, 3000);
-          },
-          error: (error) => {
-            console.error(error);
-          },
-          complete: () => {
-            console.info('send post complete');
-            this.isSuccess = true;
-          },
-        });
-    } else if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
-	  this.isSuccess = true;
+    if (this.validateEmail(this.email) && this.message.trim().length > 0) {
+      // Hier würde die Logik zum Senden der E-Mail implementiert werden
+      this.isFormSubmitted = true;
+      this.email = '';
+      this.message = '';
       ngForm.resetForm();
-	  setTimeout(() => {
-		this.isSuccess = false;
-	}, 3000);
     }
   }
   @ViewChildren('boxElement') boxElements!: QueryList<ElementRef>;
@@ -82,5 +84,10 @@ export class ContactComponent {
     this.boxElements.forEach((el) => {
       observer.observe(el.nativeElement);
     });
+  }
+
+  isValidEmail(email: string): boolean {
+    const pattern = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,4}$/;
+    return pattern.test(email);
   }
 }
