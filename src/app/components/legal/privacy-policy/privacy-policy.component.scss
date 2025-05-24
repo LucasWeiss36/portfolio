@@ -4,7 +4,6 @@ section {
 	@include dFlex($g: 4px);
 	flex-direction: column;
 	max-width: calc(1920px - 96px * 2);
-	// width: 100%;
 	padding: 144px 96px 0;
 	> div {
 		> div:first-child {

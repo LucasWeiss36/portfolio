@@ -1,11 +1,11 @@
-@import './../../styles.scss';
+@import "./../../styles.scss";
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  width: 99.7vw;
   > app-header {
-	z-index: 10;
+    z-index: 10;
     overflow: hidden;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75));
     width: 100vw;
@@ -20,14 +20,14 @@ main {
   }
 
   > app-about-me {
-	width: 100%;
-	z-index: 10;
+    width: 100%;
+    z-index: 10;
     display: flex;
     justify-content: center;
   }
 
   > app-my-skills {
-	z-index: 10;
+    z-index: 10;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -52,31 +52,30 @@ main {
   }
 
   > app-contact {
-	z-index: 10;
+    z-index: 10;
     width: 100%;
     display: flex;
     justify-content: center;
   }
 
   .arrow-down-container {
-
-	max-width: calc(1920px - 96px * 2);
-	padding:  96px 0 0 0;
-	cursor: pointer;
-	>div{
-		display: flex;
-		align-items: center;
-		gap: 12px;
-		border: 1px solid $white;
-		padding: 12px 20px;
-		border-radius: 50px;
-		&:hover{
-			border-color: $primary-color;
-			span{
-				color: $primary-color;
-			}
-		}
-	}
+    max-width: calc(1920px - 96px * 2);
+    padding: 96px 0 0 0;
+    cursor: pointer;
+    > div {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border: 1px solid $white;
+      padding: 12px 20px;
+      border-radius: 50px;
+      &:hover {
+        border-color: $primary-color;
+        span {
+          color: $primary-color;
+        }
+      }
+    }
 
     .arrow-down {
       width: 24px;
@@ -89,12 +88,11 @@ main {
       font-size: 16px;
       font-weight: 600;
     }
-	
   }
 
   @media (max-width: 1440px) {
     .arrow-down-container {
-		max-width: 1329px;
+      max-width: 1329px;
     }
   }
 }
